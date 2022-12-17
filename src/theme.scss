@@ -1,0 +1,39 @@
+$light: #FF963D;
+$dark: #2C151D;
+$primary: #b92a2e;
+$secondary: #2023d8;
+$info: #ffffff;
+$success: #599b16;
+$warning: #febc5f;
+$danger: #c20b14;
+$white : #ffff;
+
+@font-face {
+    font-family: 'Samim';
+    src: url('Samim.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Samim';
+    src: url('Samim-Bold.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Samim';
+    src: url('Samim-Medium.ttf');
+    font-weight: 500;
+}
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+:root {
+    --bs-body-font-family: 'Samim';
+}
+img.flipVertical {
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+	float: none;
+}
