@@ -1,11 +1,13 @@
 import { Component } from "react";
+import ProductCards from "./ProductCards";
+import Footer from "./Footer";
 class HomePage extends Component {
     state = {}
     render() {
         return (
             <>
                 <section>
-                    <div className="container-fluid ">
+                    <div className="container-fluid mt-5 pt-4">
                         <div
                             className="row bg-primary align-items-center"
                             style={{ height: "70" }}
@@ -79,6 +81,7 @@ class HomePage extends Component {
 
                     </div>
                 </section>
+                <ProductCards></ProductCards>
             </>
 
         );
