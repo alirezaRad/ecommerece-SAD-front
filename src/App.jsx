@@ -11,7 +11,7 @@ class App extends Component {
     state = {}
     render() {
         return (<div>
-            <MyNavbar></MyNavbar>
+            <MyNavbar user=""></MyNavbar>
             {/* <SignUpFourms></SignUpFourms> */}
             {/* <SignInFourm></SignInFourm> */}
             <Routes>

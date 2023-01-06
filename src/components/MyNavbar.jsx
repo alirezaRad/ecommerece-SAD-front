@@ -6,8 +6,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-
-import { DropdownSubmenu, NavDropdownMenu, } from "react-bootstrap-submenu";
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Dropdown from 'react-bootstrap/Dropdown';
 import { Link, NavLink } from "react-router-dom";
 import MyDropDown from "./MyDropDown";
 class MyNavbar extends Component {
@@ -15,7 +15,7 @@ class MyNavbar extends Component {
     render() {
         return (
             <>
-                <Navbar variant="dark" bg="dark" className="text-white py-3  fixed-top" expand="xxl" dir='rtl'>
+                <Navbar variant="dark" bg="dark" className="text-white py-3  fixed-top shadow-sm  " expand="xxxl" dir='rtl'>
                     <Container fluid>
                         <Navbar.Brand className="d-lg-none" href="#">فروشگاه</Navbar.Brand>
                         <Navbar.Toggle />
@@ -29,7 +29,15 @@ class MyNavbar extends Component {
                             </Offcanvas.Header>
                             <Offcanvas.Body>
                                 <Nav className="justify-content-start flex-grow-1 pe-3">
-                                    <Nav.Link href="/." className="text-end">خانه</Nav.Link>
+                                    <NavLink to="/." className="text-end text-black text-decoration-none">خانه</NavLink>
+                                    {this.props.user == "admin" ? (<>
+                                        <NavLink to="/." className="text-end text-black text-decoration-none my-2">داشبورد</NavLink>
+                                        <NavLink to="/." className="text-end text-black text-decoration-none my-2">اضافه کردن محصول</NavLink>
+                                    </>
+                                    ) : (
+                                        <>
+                                        </>
+                                    )}
                                     <MyDropDown config={[
                                         {
                                             "id": 20017,
@@ -51,7 +59,7 @@ class MyNavbar extends Component {
                                                             "childs": [
                                                                 {
                                                                     "id": 20031,
-                                                                    "title": "fuck react",
+                                                                    "title": "fuck react dfgh",
                                                                     "isDeleted": false,
                                                                     "creationDate": "12/25/2022 02:59:37",
                                                                     "childs": []
@@ -60,7 +68,7 @@ class MyNavbar extends Component {
                                                         },
                                                         {
                                                             "id": 20030,
-                                                            "title": "fuck ui",
+                                                            "title": "fuck uifghjhddfghj",
                                                             "isDeleted": false,
                                                             "creationDate": "12/25/2022 02:50:22",
                                                             "childs": []
@@ -136,16 +144,7 @@ class MyNavbar extends Component {
                                         }
                                     ]}
                                     ></MyDropDown>
-                                    {/* <NavDropdown
-                                            title="محصولات"
-                                            className="text-end mb-3"
-                                        >
-                                            <NavDropdown.Item href="#action2" className="text-end">asdff</NavDropdown.Item>
-                                            <NavDropdown
-                                                title="محصولات"
-                                                className="text-end mb-3">
-                                            </NavDropdown>
-                                        </NavDropdown>*/}
+
                                 </Nav>
                                 <Form className="d-flex me-auto">
                                     <Form.Control
@@ -156,10 +155,11 @@ class MyNavbar extends Component {
                                     />
                                     <Button variant="outline-dark bg-primary me-3 text-white">جستجو</Button>
                                 </Form>
-                                <div className="pt-2  d-flex">
-                                    <Nav.Link className="me-3" href="/login" > ورود </Nav.Link>
-                                    <Nav.Link className="mr-3 me-1" href="/register" > / ثبت نام </Nav.Link>
-                                </div>
+                                {!this.props.user ? (
+                                    <div className="pt-2  d-flex">
+                                        <NavLink className="me-3  text-black text-decoration-none" to="/login" > ورود </NavLink>
+                                        <NavLink className="mr-3 me-1  text-black text-decoration-none" to="/register" > / ثبت نام </NavLink>
+                                    </div>) : (<></>)}
                                 <div className="my-5  d-none d-md-block align-items-center mb-auto">
                                     <img style={{ height: "350px" }}
                                         src="https://blush.design/api/download?shareUri=GOom3zThy_BMHr__&c=Hair_0%7E2b121a_Outfit_0%7Eff92a2_Skin_0%7Ef5a37b&w=800&h=800&fm=png"
@@ -176,12 +176,20 @@ class MyNavbar extends Component {
                                 className="me-2"
                                 aria-label="Search"
                             />
-                            <Button variant="outline-dark bg-primary me-3 text-white">جستجو</Button>
+                            <Button variant=" bg-primary me-3 text-white">جستجو</Button>
                         </Form>
-                        <div className="pt-2  d-flex d-none d-lg-flex">
-                            <Nav.Link className="me-3" href="/login" > ورود </Nav.Link>
-                            <Nav.Link className="mr-3 me-1" href="/register" > / ثبت نام </Nav.Link>
+                        {!this.props.user ? (<div className="pt-2  d-flex d-none d-lg-flex">
+                            <NavLink className="me-3 text-white text-decoration-none" to="/login" > ورود </NavLink>
+                            <NavLink className="mr-3 me-1 text-white text-decoration-none" to="/register" > / ثبت نام </NavLink>
                         </div>
+                        ) : (
+                            <>
+                                {this.props.user == 'admin' ? (
+                                    <NavLink to="/." className="text-end text-white text-decoration-none my-2 mx-2 d-none d-lg-flex">داشبورد</NavLink>
+                                ) : (<></>)}
+                            </>
+                        )}
+
                     </Container>
                 </Navbar>
             </>
@@ -190,28 +198,3 @@ class MyNavbar extends Component {
 }
 
 export default MyNavbar;
-
-// import Button from 'react-bootstrap/Button';
-// import ButtonGroup from 'react-bootstrap/ButtonGroup';
-// import Dropdown from 'react-bootstrap/Dropdown';
-
-// function SplitBasicExample() {
-//   return (
-//     <Dropdown as={ButtonGroup}>
-//       <Button variant="success">Split Button</Button>
-
-//       <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
-
-//       <Dropdown.Menu>
-//         <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-//         <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-//         <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-//       </Dropdown.Menu>
-//     </Dropdown>
-//   );
-// }
-
-// export default SplitBasicExample;
-
-
-
