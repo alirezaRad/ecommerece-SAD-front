@@ -88,10 +88,7 @@ class HomePage extends Component {
                         </div>
                     </div>
                 </section>
-                {/* <ProductCards></ProductCards> */}
-                <ProductTable>
-
-                </ProductTable>
+                <ProductCards></ProductCards>
             </>
         );
     }

@@ -148,8 +148,8 @@ class ProductTable extends Component {
                             </div>
                         </div>
                         <div className="row col-12 overflow-auto rounded-bottom m-0  bg-white px-2 py-4" style={{ maxHeight: "500px" }}>
-                            {/* <ProductCartAdmin></ProductCartAdmin> */}
-                            <h5 className="text-center my-5"> هیچ محصولی موجود نیست</h5>
+                            <ProductCartAdmin count="130" sellCount="1500" productName="لپتاپ لنوو" price="120000000"></ProductCartAdmin>
+                            {/* <h5 className="text-center my-5"> هیچ محصولی موجود نیست</h5> */}
                         </div>
                     </div>
                 </div>

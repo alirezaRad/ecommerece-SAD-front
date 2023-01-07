@@ -1,17 +1,7 @@
 import { Component } from "react";
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { Link, NavLink } from "react-router-dom";
-import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
-import DOMPurify from 'dompurify';
-import StringToReact from 'string-to-react'
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import DrawCategor from "./DrawCategor";
-import parse from 'html-react-parser';
-import { Dropdown } from "bootstrap";
+
 
 class MyDropDownAdmin extends Component {
 

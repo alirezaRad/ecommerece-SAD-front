@@ -5,6 +5,7 @@ import MyNavbar from "./components/MyNavbar";
 import HomePage from "./components/HomePage";
 import Footer from "./components/Footer";
 import { Route, Router, Routes } from "react-router-dom";
+import AdminDashbourd from "./components/AdminDashbourd";
 
 
 class App extends Component {
@@ -23,7 +24,8 @@ class App extends Component {
                 {/* <Protect path="/dashboard" component={Dashboard} /> */}
                 {/* <Redirect from="/customers" to="users" /> */}
                 {/* <Route path="/not-found" component={NotFound} /> */}
-                <Route path="/" element={<HomePage />} />
+                {/* <Route path="/" element={<HomePage />} /> */}
+                <Route path="/" element={<AdminDashbourd />} />
                 {/* <Redirect to="/not-found" /> */}
             </Routes>
             <Footer></Footer>

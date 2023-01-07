@@ -7,6 +7,7 @@ $success: #599b16;
 $warning: #febc5f;
 $danger: #c20b14;
 $white : #ffff;
+$borderColor : #CED4DA;
 
 @font-face {
     font-family: 'Samim';
@@ -41,7 +42,11 @@ img.flipVertical {
     min-width: 10px;
     max-width: 800px;
 }
-
+.selectpicker{
+    min-width: 50px;
+    // width: 300px;
+    max-width: 800px;
+}
 
 ::-webkit-scrollbar{
     width : 5px

@@ -4,7 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquarePlus } from '@fortawesome/free-solid-svg-icons'
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 class ProductCartAdmin extends Component {
-    state = {}
+    state = {
+        productName: this.props.productName,
+        count: this.props.count,
+        sellCount: this.props.sellCount,
+        price: this.props.price,
+        offPrice: this.props.offPrice,
+
+    }
     render() {
         return (
             <div className="row col-12 p-0 m-0 my-3">
@@ -15,16 +22,16 @@ class ProductCartAdmin extends Component {
                         />
                     </div>
                     <h6 className=" col-md-3  col-sm-7 col-8 d-flex justify-content-center my-auto" >
-                        لپتاپ اچ پی پاویلیون
+                        {this.state.productName}
                     </h6>
                     <small className=" col-md-2 d-none d-md-flex justify-content-center my-auto" >
-                        20000000 تومان
+                        تومان  {this.state.price}
                     </small>
                     <small className=" col-md-2 d-none d-md-flex justify-content-center my-auto" >
-                        1200
+                        {this.state.sellCount}
                     </small>
                     <small className=" col-md-2 d-none d-md-flex justify-content-center my-auto " >
-                        150
+                        {this.state.count}
                     </small>
                     <Link className="d-flex col-md-1 col-2 justify-content-center my-auto  h4 my-auto">
                         <FontAwesomeIcon icon={faPenToSquare}></FontAwesomeIcon>
