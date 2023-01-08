@@ -2,6 +2,8 @@ import { Component } from "react";
 import ProductTable from "./ProductTable";
 import NewProuductMaking from "./NewProuductMaking";
 import NewCatogoryMaking from "./NewCatogoryMaking";
+import ProductVariantTable from "./ProductVariantTable";
+import NewVariantMaking from "./NewVariantMaking";
 class AdminDashbourd extends Component {
     state = {}
     render() {
@@ -19,9 +21,23 @@ class AdminDashbourd extends Component {
                     </ProductTable>
                     <NewProuductMaking>
                     </NewProuductMaking>
-                    {/* <NewCatogoryMaking>
+                    <NewCatogoryMaking>
 
-                    </NewCatogoryMaking> */}
+                    </NewCatogoryMaking>
+                    <NewVariantMaking variants={[{
+                        "name": "رنگ",
+                        "value": ["آبی", "قرمز"]
+                    }, {
+                        "name": "میزان حافظه SSD",
+                        "value": ["256 گیگS SD", "512 گیگ SSD"]
+                    }, {
+                        "name": "رم",
+                        "value": ["16 گیگ", "8 گیگ"]
+                    }, {
+                        "name": "هارد",
+                        "value": ["گیگابایت 512", "ترابایت 1"]
+                    }]} ></NewVariantMaking>
+                    <ProductVariantTable></ProductVariantTable>
 
                 </section></>
 
