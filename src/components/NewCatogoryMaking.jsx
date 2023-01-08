@@ -1,7 +1,16 @@
 import { Component } from "react";
 import CategorySelectOptionExteme from "./CategorySelectOptionExteme"
 class NewCatogoryMaking extends Component {
-    state = {}
+    state = {
+        variation: ["شیبشل", "یلشی", "نمشستیبمنس"],
+        number: 1,
+        newOne: "asdd"
+    }
+    addVariation = () => {
+        this.state.variation.push(this.state.newOne);
+        this.state.number = 1;
+        this.forceUpdate();
+    }
     render() {
         return (<>            <section dir="rtl" className="vh-50 m-5 pt-5" style={{ backgroundColor: "#FFFFFF" }}>
             <div className="container h-50 my-5">
@@ -16,29 +25,28 @@ class NewCatogoryMaking extends Component {
                                         </p>
                                         <form className="mx-1 mx-md-8">
                                             <div className="d-flex flex-row align-items-center mb-4">
-                                                <i className="fa fa-info fa-lg mx-3 mt-4 fa-fw" />
                                                 <div className="form-outline flex-fill mb-0">
+                                                    <i className="fa fa-info fa-lg mx-3 mt-4 fa-fw d-inline" />
                                                     <label className="form-label" htmlFor="form3Example3c">
                                                         اسم دسته جدید را انتخاب کنید
                                                     </label>
                                                     <input
                                                         type="text"
                                                         id="form3Example3c"
-                                                        className="form-control"
+                                                        className="form-control me-3"
                                                     />
                                                 </div>
                                             </div>
-
                                             <div className="d-flex flex-row align-items-center mb-4">
-                                                <i className="fa fa-database fa-lg mx-3 mt-4 fa-fw mt-5" />
                                                 <div className="form-outline flex-fill mb-0">
+                                                    <i className="fa fa-database fa-lg mx-3 mt-4 fa-fw mt-5 d-inline" />
                                                     <label className="form-label" htmlFor="form3Example4c">
                                                         دسته ای که ایجاد میکنید زیرمجموعه کدام دسته باشد
                                                     </label>
-                                                    <div>
+                                                    <div className="me-3">
                                                         <select
                                                             className="selectpicker border-borderColor rounded p-2 mt-4"
-                                                            data-live-search="true"
+                                                            data-live-search="true me-5"
                                                         >
                                                             <CategorySelectOptionExteme parentTitle="" config={[
                                                                 {
@@ -151,6 +159,33 @@ class NewCatogoryMaking extends Component {
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div className="d-flex flex-row align-items-center mb-4">
+                                                <div className="form-outline  mb-0">
+                                                    <i className="fa fa-info fa-lg mx-3  fa-fw d-inline" />
+                                                    <label className="form-label d-inline" htmlFor="form3Example3c">
+                                                        ویژگی های محصولات این دسته بندی
+                                                    </label>
+                                                    {this.state.variation.map((index) => {
+
+                                                        return (
+                                                            <div className="my-3 me-3 h6"> {this.state.number++} . {index}</div>)
+
+                                                    })
+                                                    }
+
+                                                    <input style={{ width: "150px" }}
+                                                        type="text"
+                                                        id="form3Example3c"
+                                                        onChange={(event) => {
+                                                            this.state.newOne = event.target.value;
+                                                        }}
+                                                        className="form-control d-inline me-3"
+                                                    />
+                                                    <button type="button" onClick={this.addVariation} className="btn btn-secondary d-inline me-3">
+                                                        اضافه کردن
+                                                    </button>
+                                                </div>
+                                            </div>
 
                                             <div className="d-flex justify-content-center mx-4 mb-3 mt-5 mb-lg-4">
                                                 <button type="button" className="btn btn-primary btn-lg">
@@ -159,10 +194,10 @@ class NewCatogoryMaking extends Component {
                                             </div>
                                         </form>
                                     </div>
-                                    <div className=" d-none d-lg-block col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2 pt-0 mt-0">
+                                    <div className=" d-none d-lg-block col-md-2 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2 pt-0 mt-0">
                                         <img
                                             src="https://blush.design/api/download?shareUri=ZAEmQeK5fP1U2n1t&c=Hair_0%7Ef26037_Outfit_0%7E2b121a_Skin_0%7Ef8bc9a&w=800&h=800&fm=png"
-                                            className="img-fluid flipVertical"
+                                            className="img-fluid flipVertical "
                                             alt="Sample image"
                                         />
                                     </div>
@@ -176,6 +211,7 @@ class NewCatogoryMaking extends Component {
 
         </>);
     }
+
 }
 
 export default NewCatogoryMaking;

@@ -30,6 +30,21 @@ class NewProuductMaking extends Component {
                                             </div>
                                             <div className="d-flex flex-row align-items-center mb-4">
                                                 <div className="form-outline flex-fill mb-0">
+                                                    <i className="fa fa-image fa-lg mx-3 mt-4 fa-fw" />
+                                                    <label className="form-label" htmlFor="form3Example4c">
+                                                        تصویر محصول را اضافه کنید                                                    </label>
+                                                    <div className="me-2">
+
+                                                        <input
+                                                            type="url"
+                                                            id="form3Example4c"
+                                                            className="form-control me-5"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="d-flex flex-row align-items-center mb-4">
+                                                <div className="form-outline flex-fill mb-0">
                                                     <i className="fa fa-align-justify fa-lg mx-3 mt-4 fa-fw" />
                                                     <label className="form-label" htmlFor="form3Example4c">
                                                         توضیحات محصول را اضافه کنید
@@ -169,7 +184,6 @@ class NewProuductMaking extends Component {
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div className="d-flex justify-content-center mx-4 mb-3 mt-5 mb-lg-4">
                                                 <button type="button" className="btn btn-primary btn-lg">
                                                     ثبت
