@@ -19,7 +19,7 @@ class AdminDashbourd extends Component {
                 <section className="mt-5">
                     <ProductTable>
                     </ProductTable>
-                    <NewProuductMaking>
+                    {/* <NewProuductMaking>
                     </NewProuductMaking>
                     <NewCatogoryMaking>
 
@@ -37,7 +37,7 @@ class AdminDashbourd extends Component {
                         "name": "هارد",
                         "value": ["گیگابایت 512", "ترابایت 1"]
                     }]} ></NewVariantMaking>
-                    <ProductVariantTable></ProductVariantTable>
+                    <ProductVariantTable></ProductVariantTable> */}
 
                 </section></>
 

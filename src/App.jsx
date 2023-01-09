@@ -6,6 +6,9 @@ import HomePage from "./components/HomePage";
 import Footer from "./components/Footer";
 import { Route, Router, Routes } from "react-router-dom";
 import AdminDashbourd from "./components/AdminDashbourd";
+import NewProuductMaking from "./components/NewProuductMaking";
+import NewCatogoryMaking from "./components/NewCatogoryMaking";
+import NewVariantMaking from "./components/NewVariantMaking";
 
 
 class App extends Component {
@@ -13,23 +16,32 @@ class App extends Component {
     render() {
         return (<div>
             <MyNavbar user=""></MyNavbar>
-            {/* <SignUpFourms></SignUpFourms> */}
-            {/* <SignInFourm></SignInFourm> */}
+
             <Routes>
-                {/* <Route path="/users/:id" component={User} /> */}
-                {/* <Route path="/users" component={Users} /> */}
+
+                <Route path="/dashbord/newVariantMaking" element={<NewVariantMaking variants={[{
+                    "name": "رنگ",
+                    "value": ["آبی", "قرمز"]
+                }, {
+                    "name": "میزان حافظه SSD",
+                    "value": ["256 گیگS SD", "512 گیگ SSD"]
+                }, {
+                    "name": "رم",
+                    "value": ["16 گیگ", "8 گیگ"]
+                }, {
+                    "name": "هارد",
+                    "value": ["گیگابایت 512", "ترابایت 1"]
+                }]} ></NewVariantMaking>} />
+                <Route path="/dashbord/newCatogoryMaking" element={<NewCatogoryMaking authed={true} />} />
+                <Route path="/dashbord/newProuductMaking" element={<NewProuductMaking />} />
+                <Route path="/dashbord" element={<AdminDashbourd />} />
                 <Route path="/login" element={<SignInFourm />} />
-                {/* <Route path="/logout" component={Logout} /> */}
                 <Route path="/register" element={<SignUpFourms />} />
-                {/* <Protect path="/dashboard" component={Dashboard} /> */}
-                {/* <Redirect from="/customers" to="users" /> */}
-                {/* <Route path="/not-found" component={NotFound} /> */}
-                {/* <Route path="/" element={<HomePage />} /> */}
                 <Route path="/" element={<AdminDashbourd />} />
-                {/* <Redirect to="/not-found" /> */}
             </Routes>
             <Footer></Footer>
         </div>);
     }
 }
+
 export default App;

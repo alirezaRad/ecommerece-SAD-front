@@ -12,7 +12,7 @@ class ProductTable extends Component {
     state = {}
     render() {
         return (
-            <section style={{ backgroundColor: "white" }} ClassName="" >
+            <section dir="ltr" style={{ backgroundColor: "white" }} ClassName="" >
                 <div className="container-fluid p-5  " >
                     <div className="shadow row  m-0 bg-dark rounded-3">
                         <div className=" col-12 bg-dark  text-white rounded-top text-end p-2 d-md-flex " >

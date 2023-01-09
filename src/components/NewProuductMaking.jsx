@@ -1,7 +1,15 @@
 import { Component } from "react";
+import { Link, NavLink } from "react-router-dom";
 import CategorySelectOption from "./CategorySelectOption"
+import { Navigate } from "react-router-dom";
 class NewProuductMaking extends Component {
-    state = {}
+    state = {
+        redirect: false
+    }
+    create = () => {
+        this.state.redirect = true;
+        this.forceUpdate();
+    }
     render() {
         return (<>            <section dir="rtl" className="vh-50 m-5 pt-5" style={{ backgroundColor: "#FFFFFF" }}>
             <div className="container h-50 my-5">
@@ -16,16 +24,17 @@ class NewProuductMaking extends Component {
                                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                                         <form className="mx-1 mx-md-8">
                                             <div className="d-flex flex-row align-items-center mb-4">
-                                                <i className="fas fa-cart-plus fa-lg mx-3 mt-4 fa-fw" />
                                                 <div className="form-outline flex-fill mb-0">
+                                                    <i className="fas fa-cart-plus fa-lg mx-3 mt-4 fa-fw" />
                                                     <label className="form-label" htmlFor="form3Example3c">
                                                         اسم محصول را وارد کنید
                                                     </label>
-                                                    <input
+                                                    <div className="me-2"><input
                                                         type="text"
                                                         id="form3Example3c"
-                                                        className="form-control"
+                                                        className="form-control me-5"
                                                     />
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div className="d-flex flex-row align-items-center mb-4">
@@ -61,14 +70,14 @@ class NewProuductMaking extends Component {
                                                 </div>
                                             </div>
                                             <div className="d-flex flex-row align-items-center mb-4">
-                                                <i className="fa fa-database fa-lg mx-3 mt-4 fa-fw mt-5" />
                                                 <div className="form-outline flex-fill mb-0">
+                                                    <i className="fa fa-database fa-lg mx-3 mt-4 fa-fw mt-5" />
                                                     <label className="form-label" htmlFor="form3Example4c">
                                                         دسته بندی محصول را انتخاب کنید
                                                     </label>
-                                                    <div>
+                                                    <div className="me-2">
                                                         <select
-                                                            className="selectpicker border-borderColor rounded p-2 mt-4"
+                                                            className="selectpicker border-borderColor rounded p-2 mt-4 me-5"
                                                             data-live-search="true"
                                                         >
                                                             <CategorySelectOption parentTitle="" config={[
@@ -178,14 +187,15 @@ class NewProuductMaking extends Component {
                                                             ]}>
                                                             </CategorySelectOption>
                                                         </select>
-                                                        <button type="button" className="d-block d-sm-inline mt-4 mt-sm-0 btn btn-secondary btn-small me-4">
-                                                            <small> دسته جدید
-                                                            </small></button>
+                                                        <Link to="/dashbord/newCatogoryMaking" className="text-decoration-none">
+                                                            <button type="button" className="d-block d-sm-inline mt-4 mt-sm-0 btn btn-secondary btn-small me-4">
+                                                                <small> دسته جدید
+                                                                </small></button></Link>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="d-flex justify-content-center mx-4 mb-3 mt-5 mb-lg-4">
-                                                <button type="button" className="btn btn-primary btn-lg">
+                                                <button type="button" className="btn btn-primary btn-lg" onClick={this.create}>
                                                     ثبت
                                                 </button>
                                             </div>
@@ -204,6 +214,9 @@ class NewProuductMaking extends Component {
                     </div>
                 </div>
             </div>
+            {
+                this.state.redirect && <Navigate to='/dashbord' replace={true} />
+            }
         </section>
 
         </>);

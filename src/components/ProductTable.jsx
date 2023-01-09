@@ -24,7 +24,9 @@ class ProductTable extends Component {
                                     aria-label="Search"
                                 />
                                 <Button variant="outline-dark bg-primary me-3 text-white  ">جستجو</Button>
-                                <Button variant="outline-dark bg-primary mr-auto text-white  bg-secondary"><div className="text-center " >محصول جدید</div></Button>
+                                <Link to="/dashbord/newProuductMaking" className=" text-decoration-none">
+                                    <Button variant="outline-dark bg-primary mr-auto text-white  bg-secondary"><div className="text-center " >محصول جدید</div></Button>
+                                </Link>
                             </Form>
                             <Dropdown className="text-end d-none d-md-block " >
                                 <MyDropDownAdmin config={[

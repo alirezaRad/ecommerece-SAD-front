@@ -1,5 +1,6 @@
 import { map } from "jquery";
 import { Component } from "react";
+import ProductVariantTable from "./ProductVariantTable"
 import CategorySelectOptionExteme from "./CategorySelectOptionExteme"
 class NewVariantMaking extends Component {
     state = {
@@ -41,6 +42,14 @@ class NewVariantMaking extends Component {
                                                                         )
                                                                     })}
                                                                 </select>
+                                                                <input style={{ width: "120px" }}
+                                                                    type="text"
+                                                                    id="form3Example3c"
+                                                                    className="form-control d-inline me-3"
+                                                                />
+                                                                <button type="button" className="btn btn-secondary d-inline me-3 btn-sm">
+                                                                    اضافه کردن
+                                                                </button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -100,6 +109,7 @@ class NewVariantMaking extends Component {
                     </div>
                 </div>
             </div>
+            <ProductVariantTable></ProductVariantTable>
         </section>
 
         </>);
