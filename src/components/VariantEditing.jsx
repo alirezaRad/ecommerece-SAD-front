@@ -2,7 +2,7 @@ import { map } from "jquery";
 import { Component } from "react";
 import ProductVariantTable from "./ProductVariantTable"
 import CategorySelectOptionExteme from "./CategorySelectOptionExteme"
-class NewVariantMaking extends Component {
+class VariantEditing extends Component {
     state = {
         variants: this.props.variants
     }
@@ -16,7 +16,7 @@ class NewVariantMaking extends Component {
                                 <div className="card-body p-md-5">
                                     <div className="row justify-content-center">
                                         <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                                            ایجاد یک گونه جدید از محصول
+                                            ویرایش گونه موجود از محصول
                                         </p>
                                         <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                                             <form className="mx-1 mx-md-8">
@@ -89,14 +89,14 @@ class NewVariantMaking extends Component {
                                                 </div>
                                                 <div className="d-flex justify-content-center mx-4 mb-3 mt-5 mb-lg-4">
                                                     <button type="button" className="btn btn-primary btn-lg">
-                                                        ایجاد
+                                                        ویرایش
                                                     </button>
                                                 </div>
                                             </form>
                                         </div>
                                         <div className=" d-none d-lg-block col-md-2 col-lg-6 col-xl-5 d-flex align-items-center order-1 order-lg-2 pt-0 mt-auto ">
                                             <img
-                                                src="https://blush.design/api/download?shareUri=en65RzsllaQcgcSz&c=Hair_0%7Ef26037_Outfit_0%7E2b121a_Skin_0%7Ef8bc9a&w=800&h=800&fm=png"
+                                                src="https://blush.design/api/download?shareUri=W4qKFVF-nE4I2T5r&c=Hair_0%7Ef26037_Outfit_0%7E2b121a_Skin_0%7Ef8bc9a&w=800&h=800&fm=png"
                                                 className="img-fluid flipVertical"
                                                 alt="Sample image"
                                             />
@@ -115,5 +115,5 @@ class NewVariantMaking extends Component {
     }
 }
 
-export default NewVariantMaking;
+export default VariantEditing;
 // https://blush.design/api/download?shareUri=4kSKnigHYtWafTs5&c=Hair_0%7Ef26037_Outfit_0%7E2b121a_Skin_0%7Ef8bc9a&w=800&h=800&fm=png

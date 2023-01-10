@@ -33,7 +33,7 @@ class ProductCartAdmin extends Component {
                     <small className=" col-md-2 d-none d-md-flex justify-content-center my-auto " >
                         {this.state.count}
                     </small>
-                    <Link to="" className="d-flex col-md-1 col-2 justify-content-center my-auto  h4 my-auto">
+                    <Link to="/dashbord/ProuductEditing" className="d-flex col-md-1 col-2 justify-content-center my-auto  h4 my-auto">
                         <FontAwesomeIcon icon={faPenToSquare}></FontAwesomeIcon>
                     </Link>
                     <Link to="/dashbord/newVariantMaking" className="d-flex col-md-1 col-2  my-auto justify-content-center   h4  ">

@@ -25,7 +25,7 @@ class ProductTable extends Component {
                                     <div className="col-md-2 d-none d-md-block text-white pt-2 text-center"> قیمت</div>
                                     <div className="col-md-2 d-none d-md-block text-white pt-2 text-center"> فروش</div>
                                     <div className="col-md-2 d-none d-md-block text-white pt-2 text-center"> موجودی</div>
-                                    <div className="col-md-1 col-2 text-white pt-2 text-sm-center  "> حذف</div>
+                                    <div className="col-md-1 col-2 text-white pt-2 text-sm-center  "> ویرایش</div>
                                 </div>
                             </div>
                         </div>

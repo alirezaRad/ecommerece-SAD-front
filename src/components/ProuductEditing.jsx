@@ -1,31 +1,13 @@
-import { faTurkishLiraSign } from "@fortawesome/free-solid-svg-icons";
 import { Component } from "react";
-import { Nav } from "react-bootstrap";
+import { Link, NavLink } from "react-router-dom";
+import CategorySelectOption from "./CategorySelectOption"
 import { Navigate } from "react-router-dom";
-import CategorySelectOptionExteme from "./CategorySelectOptionExteme"
-class NewCatogoryMaking extends Component {
+class ProuductEditing extends Component {
     state = {
-        variation: ["شیبشل", "یلشی", "نمشستیبمنس"],
-        number: 1,
-        newOne: "asdd",
         redirect: false
-    }
-    addVariation = () => {
-        this.state.variation.push(this.state.newOne);
-        this.state.number = 1;
-        this.forceUpdate();
     }
     create = () => {
         this.state.redirect = true;
-        this.forceUpdate();
-    }
-    deletVariation(index) {
-        console.log(index)
-        let delet = this.state.variation.indexOf(index)
-        console.log(delet)
-        console.log(this.state.variation[delet])
-        this.state.variation.splice(delet, 1)
-        this.state.number = 1;
         this.forceUpdate();
     }
     render() {
@@ -37,35 +19,69 @@ class NewCatogoryMaking extends Component {
                             <div className="card-body p-md-5">
                                 <div className="row justify-content-center">
                                     <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                                        ایجاد دسته بندی جدیدی
+                                        ویرایش محصول جدید
                                     </p>
                                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                                         <form className="mx-1 mx-md-8">
                                             <div className="d-flex flex-row align-items-center mb-4">
                                                 <div className="form-outline flex-fill mb-0">
-                                                    <i className="fa fa-info fa-lg mx-3 mt-4 fa-fw d-inline" />
+                                                    <i className="fas fa-cart-plus fa-lg mx-3 mt-4 fa-fw" />
                                                     <label className="form-label" htmlFor="form3Example3c">
-                                                        اسم دسته جدید را انتخاب کنید
+                                                        در صورت لزوم اسم محصول را تغییر دهید
                                                     </label>
-                                                    <input
+                                                    <div className="me-2"><input
                                                         type="text"
                                                         id="form3Example3c"
-                                                        className="form-control me-3"
+                                                        className="form-control me-5"
                                                     />
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div className="d-flex flex-row align-items-center mb-4">
                                                 <div className="form-outline flex-fill mb-0">
-                                                    <i className="fa fa-database fa-lg mx-3 mt-4 fa-fw mt-5 d-inline" />
+                                                    <i className="fa fa-image fa-lg mx-3 mt-4 fa-fw" />
                                                     <label className="form-label" htmlFor="form3Example4c">
-                                                        دسته ای که ایجاد میکنید زیرمجموعه کدام دسته باشد
+                                                        در صورت لزوم تصویر محصول را تغییر دهید
                                                     </label>
-                                                    <div className="me-3">
+                                                    <div className="me-2">
+
+                                                        <input
+                                                            type="url"
+                                                            id="form3Example4c"
+                                                            className="form-control me-5"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="d-flex flex-row align-items-center mb-4">
+                                                <div className="form-outline flex-fill mb-0">
+                                                    <i className="fa fa-align-justify fa-lg mx-3 mt-4 fa-fw" />
+                                                    <label className="form-label" htmlFor="form3Example4c">
+                                                        توضیحات جدید محصول را اعمال کنید
+                                                    </label>
+                                                    <div className="me-2">
+
+                                                        <textarea
+                                                            type="text"
+                                                            id="form3Example4c"
+                                                            className="form-control me-5"
+                                                            rows={5}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="d-flex flex-row align-items-center mb-4">
+                                                <div className="form-outline flex-fill mb-0">
+                                                    <i className="fa fa-database fa-lg mx-3 mt-4 fa-fw mt-5" />
+                                                    <label className="form-label" htmlFor="form3Example4c">
+                                                        دسته بندی جدید محصول را انتخاب کنید
+                                                    </label>
+                                                    <div className="me-2">
                                                         <select
-                                                            className="selectpicker border-borderColor rounded p-2 mt-4"
-                                                            data-live-search="true me-5"
+                                                            className="selectpicker border-borderColor rounded p-2 mt-4 me-5"
+                                                            data-live-search="true"
                                                         >
-                                                            <CategorySelectOptionExteme parentTitle="" config={[
+                                                            <CategorySelectOption parentTitle="" config={[
                                                                 {
                                                                     "id": 20017,
                                                                     "title": "root",
@@ -170,56 +186,26 @@ class NewCatogoryMaking extends Component {
                                                                     ]
                                                                 }
                                                             ]}>
-                                                            </CategorySelectOptionExteme>
+                                                            </CategorySelectOption>
                                                         </select>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="d-flex flex-row align-items-center mb-4">
-                                                <div className="form-outline  mb-0">
-                                                    <i className="fa fa-info fa-lg mx-3  fa-fw d-inline" />
-                                                    <label className="form-label d-inline " htmlFor="form3Example3c">
-                                                        ویژگی های محصولات این دسته بندی
-                                                    </label>
-                                                    {this.state.variation.map((index) => {
-                                                        return (
-                                                            <div className="mt-2">
-                                                                <div className="mt-4 mb-3 me-3 h6 d-inline"> {this.state.number++} . {index}</div>
-                                                                <button type="button" className="btn btn-danger btn-sm d-inline m-2 mr-auto" onClick={() => {
-                                                                    this.deletVariation(index)
-                                                                }}>
-                                                                    حذف
-                                                                </button>
-                                                            </div>)
-                                                    })
-                                                    }
-                                                    <div className="mt-4">
-                                                        <input style={{ width: "150px" }}
-                                                            type="text"
-                                                            id="form3Example3c"
-                                                            onChange={(event) => {
-                                                                this.state.newOne = event.target.value;
-                                                            }}
-                                                            className="form-control d-inline me-3"
-                                                        />
-                                                        <button type="button" onClick={this.addVariation} className="btn btn-secondary d-inline me-3">
-                                                            اضافه کردن
-                                                        </button>
+                                                        <Link to="/dashbord/newCatogoryMaking" className="text-decoration-none">
+                                                            <button type="button" className="d-block d-sm-inline mt-4 mt-sm-0 btn btn-secondary btn-small me-4">
+                                                                <small> دسته جدید
+                                                                </small></button></Link>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="d-flex justify-content-center mx-4 mb-3 mt-5 mb-lg-4">
                                                 <button type="button" className="btn btn-primary btn-lg" onClick={this.create}>
-                                                    ایجاد
+                                                    اعمال تغییرات
                                                 </button>
                                             </div>
                                         </form>
                                     </div>
-                                    <div className=" d-none d-lg-block col-md-2 col-lg-6 col-xl-5 d-flex align-items-center order-1 order-lg-2 pt-0 mt-0 mr-auto">
+                                    <div className=" d-none d-lg-block col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2 pt-5 mt-5">
                                         <img
-                                            src="https://blush.design/api/download?shareUri=wtxUBy6Qs3gzClwN&c=Hair_0%7Ef26037_Outfit_0%7E2b121a_Skin_0%7Ef8bc9a&w=800&h=800&fm=png"
-                                            className="img-fluid flipVertical "
+                                            src="https://blush.design/api/download?shareUri=Cgc8G0w0rO2_-SUc&c=Hair_0%7Eff953b_Outfit_0%7E2b121a_Skin_0%7Ef8bc9a&w=800&h=800&fm=png"
+                                            className="img-fluid flipVertical"
                                             alt="Sample image"
                                         />
                                     </div>
@@ -230,13 +216,12 @@ class NewCatogoryMaking extends Component {
                 </div>
             </div>
             {
-                this.state.redirect && <Navigate to={-1} replace={true} />
+                this.state.redirect && <Navigate to='/dashbord' replace={true} />
             }
-        </section >
+        </section>
 
         </>);
     }
-
 }
 
-export default NewCatogoryMaking;
+export default ProuductEditing;

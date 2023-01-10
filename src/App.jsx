@@ -9,6 +9,8 @@ import AdminDashbourd from "./components/AdminDashbourd";
 import NewProuductMaking from "./components/NewProuductMaking";
 import NewCatogoryMaking from "./components/NewCatogoryMaking";
 import NewVariantMaking from "./components/NewVariantMaking";
+import ProuductEditing from "./components/ProuductEditing"
+import VariantEditing from "./components/VariantEditing"
 
 
 class App extends Component {
@@ -32,6 +34,20 @@ class App extends Component {
                     "name": "هارد",
                     "value": ["گیگابایت 512", "ترابایت 1"]
                 }]} ></NewVariantMaking>} />
+                <Route path="/dashbord/VariantEditing" element={<VariantEditing authed={true} variants={[{
+                    "name": "رنگ",
+                    "value": ["آبی", "قرمز"]
+                }, {
+                    "name": "میزان حافظه SSD",
+                    "value": ["256 گیگS SD", "512 گیگ SSD"]
+                }, {
+                    "name": "رم",
+                    "value": ["16 گیگ", "8 گیگ"]
+                }, {
+                    "name": "هارد",
+                    "value": ["گیگابایت 512", "ترابایت 1"]
+                }]} />} />
+                <Route path="/dashbord/ProuductEditing" element={<ProuductEditing authed={true} />} />
                 <Route path="/dashbord/newCatogoryMaking" element={<NewCatogoryMaking authed={true} />} />
                 <Route path="/dashbord/newProuductMaking" element={<NewProuductMaking />} />
                 <Route path="/dashbord" element={<AdminDashbourd />} />

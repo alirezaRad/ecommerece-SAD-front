@@ -1,5 +1,6 @@
 import { Component } from "react";
 import ProductTable from "./ProductTable";
+import CategoryEditing from "./CategoryEditing"
 import NewProuductMaking from "./NewProuductMaking";
 import NewCatogoryMaking from "./NewCatogoryMaking";
 import ProductVariantTable from "./ProductVariantTable";
@@ -17,6 +18,7 @@ class AdminDashbourd extends Component {
                     </div>
                 </section>
                 <section className="mt-5">
+                    <CategoryEditing></CategoryEditing>
                     <ProductTable>
                     </ProductTable>
                     {/* <NewProuductMaking>
