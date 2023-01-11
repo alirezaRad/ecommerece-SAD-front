@@ -10,15 +10,17 @@ class ProductCartAdmin extends Component {
         sellCount: this.props.sellCount,
         price: this.props.price,
         offPrice: this.props.offPrice,
+        image : this.props.image
 
     }
     render() {
+        console.log(this.state)
         return (
             <div className="row col-12 p-0 m-0 my-3">
                 <div className="m-0 p-0 col-12 row rounded-bottom" style={{ backgroundColor: "white" }}>
                     <div className="col-0 col-sm-1 d-none d-sm-block" >
                         <img style={{ width: "80px" }}
-                            src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/4.webp"
+                            src={this.state.image}
                         />
                     </div>
                     <h6 className=" col-md-3  col-sm-7 col-8 d-flex justify-content-center my-auto" >

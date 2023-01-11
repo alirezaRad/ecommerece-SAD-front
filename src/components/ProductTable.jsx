@@ -8,8 +8,67 @@ import Button from 'react-bootstrap/Button';
 import { DropdownSubmenu, NavDropdownMenu } from "react-bootstrap-submenu";
 import { Link } from "react-router-dom";
 import ProductCartAdmin from "./ProductCartAdmin";
+import axios from "axios"
 class ProductTable extends Component {
-    state = {}
+    state = {
+        products: []
+    }
+    async componentDidMount() {
+        const response = null
+        try {
+            response = await axios.get("192.168.100.91:5031/api/Prou")
+        } catch (error) {
+            console.log(error)
+        }
+        if (response != null)
+            this.setState({ products: response.data.data })
+        else {
+            this.setState({
+                products: [
+
+                    {
+                        "id": 30003,
+                        "categoryId": 20021,
+                        "description": "economy",
+                        "image": "https://cdn01.zoomit.ir/2022/2/xiaomi-mi-11-lite-black.jpg",
+                        "name": "shiaomi 11 ligt 5g",
+                        "minimumPrice": 0,
+                        "totalQuantity": 0
+                    },
+                    {
+                        "id": 10002,
+                        "categoryId": 20024,
+                        "description": "best laptop ever",
+                        "image": "https://cdn01.zoomit.ir/2021/5/lenovo-ideapad-5-front.jpg",
+                        "name": "lenovo ideapad 5",
+                        "minimumPrice": 2030000,
+                        "totalQuantity": 49
+                    },
+                    {
+                        "id": 20003,
+                        "categoryId": 20024,
+                        "description": "string",
+                        "image": "https://mestercomputer.com/wp-content/uploads/2022/06/temp-site-33-600x600.jpg",
+                        "name": "razor mouse",
+                        "minimumPrice": 0,
+                        "totalQuantity": 0
+                    },
+                    {
+                        "id": 30004,
+                        "categoryId": 30021,
+                        "description": "economy",
+                        "image": "http://sc04.alicdn.com/kf/H88a795bf0a624d008b384d28ce3206e3r.png",
+                        "name": "key board",
+                        "minimumPrice": 0,
+                        "totalQuantity": 0
+                    }
+                ]
+            })
+            alert(" we cant connect Loading from Mock")
+        }
+        console.log(this.state.products)
+        console.log("OK")
+    }
     render() {
         return (
             <section style={{ backgroundColor: "white" }} ClassName="" >
@@ -150,7 +209,10 @@ class ProductTable extends Component {
                             </div>
                         </div>
                         <div className="row col-12 overflow-auto rounded-bottom m-0  bg-white px-2 py-4" style={{ maxHeight: "500px" }}>
-                            <ProductCartAdmin count="130" sellCount="1500" productName="لپتاپ لنوو" price="120000000"></ProductCartAdmin>
+                            {this.state.products.map((index) => {
+                                return (
+                                    <ProductCartAdmin image = {index.image} count= {index.totalQuantity} sellCount="0" productName={index.name} price={index.minimumPrice}></ProductCartAdmin>)
+                            })}
                             {/* <h5 className="text-center my-5"> هیچ محصولی موجود نیست</h5> */}
                         </div>
                     </div>

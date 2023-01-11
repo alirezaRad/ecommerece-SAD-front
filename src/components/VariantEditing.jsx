@@ -1,5 +1,6 @@
 import { map } from "jquery";
 import { Component } from "react";
+import { Link } from "react-router-dom";
 import ProductVariantTable from "./ProductVariantTable"
 import CategorySelectOptionExteme from "./CategorySelectOptionExteme"
 class VariantEditing extends Component {
@@ -88,9 +89,11 @@ class VariantEditing extends Component {
                                                     </div>
                                                 </div>
                                                 <div className="d-flex justify-content-center mx-4 mb-3 mt-5 mb-lg-4">
-                                                    <button type="button" className="btn btn-primary btn-lg">
+                                                    <Link to = "/dashbord/newVariantMaking">
+                                                    <button type="button" className="btn btn-primary btn-lg text-decoration-none">
                                                         ویرایش
                                                     </button>
+                                                    </Link>
                                                 </div>
                                             </form>
                                         </div>

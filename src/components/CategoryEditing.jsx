@@ -234,7 +234,7 @@ class CategoryEditing extends Component {
                     </div>
                 </div>
                 {
-                    this.state.redirect && <Navigate to='/dashbord/newProuductMaking' replace={true} />
+                    this.state.redirect && <Navigate to={-1} replace={true} />
                 }
             </section >
 

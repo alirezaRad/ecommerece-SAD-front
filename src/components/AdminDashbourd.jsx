@@ -5,46 +5,33 @@ import NewProuductMaking from "./NewProuductMaking";
 import NewCatogoryMaking from "./NewCatogoryMaking";
 import ProductVariantTable from "./ProductVariantTable";
 import NewVariantMaking from "./NewVariantMaking";
+import CategoryTable from "./CategoryTable";
+import axios from "axios"
 class AdminDashbourd extends Component {
-    state = {}
+    state = {
+    
+    }
+
+    async componentDidMount()
+    {   
+        
+        console.log(this.state.id)
+        console.log(window.location.href.split('/')[4])
+        // const response = await axios.get("192.168.100.91:5031/api/Country")
+        // console.log(response)
+        // this.setState({products : response.data.data})
+    }
     render() {
         return (
             <>
                 <section dir="rtl" className="vh-800 m-5 pt-5" style={{ backgroundColor: "#FFFFFF" }}>
-                    <div className="container h-800 my-5">
-                        <div className="row d-flex justify-content-center align-items-center h-800 border rounded p-5">
-                            گزارشات موجود نیست
-                        </div>
-                    </div>
+                <CategoryTable ></CategoryTable>
                 </section>
-                <section className="mt-5">
-                    <CategoryEditing></CategoryEditing>
                     <ProductTable>
-                    </ProductTable>
-                    {/* <NewProuductMaking>
-                    </NewProuductMaking>
-                    <NewCatogoryMaking>
-
-                    </NewCatogoryMaking>
-                    <NewVariantMaking variants={[{
-                        "name": "رنگ",
-                        "value": ["آبی", "قرمز"]
-                    }, {
-                        "name": "میزان حافظه SSD",
-                        "value": ["256 گیگS SD", "512 گیگ SSD"]
-                    }, {
-                        "name": "رم",
-                        "value": ["16 گیگ", "8 گیگ"]
-                    }, {
-                        "name": "هارد",
-                        "value": ["گیگابایت 512", "ترابایت 1"]
-                    }]} ></NewVariantMaking>
-                    <ProductVariantTable></ProductVariantTable> */}
-
-                </section></>
+                    </ProductTable></>
 
         );
     }
 }
-
+//const DashbourdWithRouter = withRouter(AdminDashbourd);
 export default AdminDashbourd;

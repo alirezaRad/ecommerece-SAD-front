@@ -11,6 +11,7 @@ import NewCatogoryMaking from "./components/NewCatogoryMaking";
 import NewVariantMaking from "./components/NewVariantMaking";
 import ProuductEditing from "./components/ProuductEditing"
 import VariantEditing from "./components/VariantEditing"
+import CategoryEditing from "./components/CategoryEditing";
 
 
 class App extends Component {
@@ -34,7 +35,7 @@ class App extends Component {
                     "name": "هارد",
                     "value": ["گیگابایت 512", "ترابایت 1"]
                 }]} ></NewVariantMaking>} />
-                <Route path="/dashbord/VariantEditing" element={<VariantEditing authed={true} variants={[{
+                <Route path="/dashbord/VariantEditing" element={<VariantEditing variants={[{
                     "name": "رنگ",
                     "value": ["آبی", "قرمز"]
                 }, {
@@ -47,10 +48,11 @@ class App extends Component {
                     "name": "هارد",
                     "value": ["گیگابایت 512", "ترابایت 1"]
                 }]} />} />
-                <Route path="/dashbord/ProuductEditing" element={<ProuductEditing authed={true} />} />
-                <Route path="/dashbord/newCatogoryMaking" element={<NewCatogoryMaking authed={true} />} />
-                <Route path="/dashbord/newProuductMaking" element={<NewProuductMaking />} />
-                <Route path="/dashbord" element={<AdminDashbourd />} />
+                <Route path="/dashbord/ProuductEditing" element={<ProuductEditing />} />
+                <Route path="/dashbord/CategoryEditing" element={<CategoryEditing  />} />
+                <Route path="/dashbord/newCatogoryMaking" element={<NewCatogoryMaking  />} />
+                <Route path="/dashbord/newProuductMaking" element={<NewProuductMaking  />} />
+                <Route path="/dashbord/" element={<AdminDashbourd  />} />
                 <Route path="/login" element={<SignInFourm />} />
                 <Route path="/register" element={<SignUpFourms />} />
                 <Route path="/" element={<AdminDashbourd />} />
