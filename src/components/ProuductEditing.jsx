@@ -39,6 +39,10 @@ class ProuductEditing extends Component {
                                             </div>
                                             <div className="d-flex flex-row align-items-center mb-4">
                                                 <div className="form-outline flex-fill mb-0">
+                                                    <div class="d-flex justify-content-center m-3">
+                                                        <img src="https://www.slntechnologies.com/wp-content/uploads/2017/08/ef3-placeholder-image.jpg"
+                                                            className="rounded " alt="example placeholder" style={{ width: '400px' }} />
+                                                    </div>
                                                     <i className="fa fa-image fa-lg mx-3 mt-4 fa-fw" />
                                                     <label className="form-label" htmlFor="form3Example4c">
                                                         در صورت لزوم تصویر محصول را تغییر دهید
@@ -46,7 +50,7 @@ class ProuductEditing extends Component {
                                                     <div className="me-2">
 
                                                         <input
-                                                            type="url"
+                                                            type="file"
                                                             id="form3Example4c"
                                                             className="form-control me-5"
                                                         />
@@ -202,9 +206,9 @@ class ProuductEditing extends Component {
                                             </div>
                                         </form>
                                     </div>
-                                    <div className=" d-none d-lg-block col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2 pt-5 mt-5">
+                                    <div className=" d-none d-lg-block col-md-8 col-lg-4 col-xl-4 d-flex align-items-center order-1 order-lg-2 pt-5 mt-5 m-5">
                                         <img
-                                            src="https://blush.design/api/download?shareUri=Cgc8G0w0rO2_-SUc&c=Hair_0%7Eff953b_Outfit_0%7E2b121a_Skin_0%7Ef8bc9a&w=800&h=800&fm=png"
+                                            src="https://blush.design/api/download?shareUri=uD0QM-nMcIEKZvMZ&c=Hair_0%7Ef26037_Outfit_0%7E2b121a_Skin_0%7Ef8bc9a&w=800&h=800&fm=png"
                                             className="img-fluid flipVertical"
                                             alt="Sample image"
                                         />

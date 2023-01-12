@@ -49,10 +49,10 @@ class App extends Component {
                     "value": ["گیگابایت 512", "ترابایت 1"]
                 }]} />} />
                 <Route path="/dashbord/ProuductEditing" element={<ProuductEditing />} />
-                <Route path="/dashbord/CategoryEditing" element={<CategoryEditing  />} />
-                <Route path="/dashbord/newCatogoryMaking" element={<NewCatogoryMaking  />} />
-                <Route path="/dashbord/newProuductMaking" element={<NewProuductMaking  />} />
-                <Route path="/dashbord/" element={<AdminDashbourd  />} />
+                <Route path="/dashbord/CategoryEditing" element={<CategoryEditing />} />
+                <Route path="/dashbord/newCatogoryMaking" element={<NewCatogoryMaking />} />
+                <Route path="/dashbord/newProuductMaking" element={<NewProuductMaking />} />
+                <Route path="/dashbord/" element={<AdminDashbourd />} />
                 <Route path="/login" element={<SignInFourm />} />
                 <Route path="/register" element={<SignUpFourms />} />
                 <Route path="/" element={<AdminDashbourd />} />

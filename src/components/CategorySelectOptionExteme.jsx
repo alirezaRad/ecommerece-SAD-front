@@ -1,12 +1,5 @@
 import { Component } from "react";
-import DOMPurify from 'dompurify';
-import StringToReact from 'string-to-react'
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import parse from 'html-react-parser';
+
 
 class CategorySelectOptionExteme extends Component {
 

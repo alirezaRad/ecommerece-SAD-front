@@ -42,6 +42,7 @@ img.flipVertical {
     min-width: 10px;
     max-width: 800px;
 }
+
 .selectpicker{
     min-width: 50px;
     // width: 300px;
@@ -60,7 +61,7 @@ img.flipVertical {
 }
 div {
     /* This is the default, you don't need to
-       explicitly declare it unless overriding
+    explicitly declare it unless overriding
        another declaration */
-       white-space: nowrap; 
-  }
+    white-space: nowrap; 
+}
