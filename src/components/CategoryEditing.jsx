@@ -13,7 +13,7 @@ class CategoryEditing extends Component {
     addVariation = () => {
         this.state.variation.push(this.state.newOne);
         this.state.number = 1;
-        this.forceUpdate();
+        this.forceUpdate(); 
     }
     create = () => {
         this.state.redirect = true;

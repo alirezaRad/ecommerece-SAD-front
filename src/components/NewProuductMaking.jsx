@@ -61,7 +61,6 @@ class NewProuductMaking extends Component {
                                                     <label className="form-label" htmlFor="form3Example4c">
                                                         تصویر محصول را اضافه کنید                                                    </label>
                                                     <div className="me-2">
-
                                                         <input
                                                             type="file"
                                                             id="form3Example4c"
