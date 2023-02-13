@@ -12,7 +12,7 @@ class ProductPage extends Component {
     }
     render() {
         return (
-            <div className=" my-5 py-5  justify-content-center row col-12">
+            <div className=" my-5 py-5  justify-content-center row col-12 container">
                 <div className="col-12 row m-5 justify-content-center p-0 m-0">
                     <div className="row col-12 col-md-6 justify-content-center p-0 m-0">
                         <img
@@ -21,13 +21,17 @@ class ProductPage extends Component {
                             alt="Laptop"
                         />
                     </div>
-                    <div className="col-12 col-md-6 justify-content-center text-center">
+                    <div className="col-12 row col-md-6 justify-content-center text-center">
                         <h1 className="">لپتاپ اچ پی پاویلیون</h1>
-                        <p className="text-primary tet-decoration">لپتاپ</p>
-                        <p className="">لپتاپ با کیفیت و با دوام </p>
-                        <h3 className="">1500000 تومان</h3>
-                        {this.starMaking()}
-                        <button className="btn btn-primary">اضافه کردن به سبد خرید</button>
+                        <p className="text-primary my-3">لپتاپ</p>
+                        <p className="col-12 text-wrap">
+                            لپتاپ با کیفیت و با دوام لپتاپ با کیفیت و با دوام لپتاپ با کیفیت و با دوام لپتاپ با کیفیت و با دوام لپتاپ با کیفیت و با دوام لپتاپ با کیفیت و با دوام
+                        </p>
+                        <h3 className="my-3">1500000 تومان</h3>
+                        <div className="ms-auto text-primary mb-2 mt-3">
+                            {this.starMaking()}
+                        </div>
+                        <button className="btn btn-primary col-4 my-5">اضافه کردن به سبد خرید</button>
                     </div>
                 </div>
             </div>
@@ -35,8 +39,8 @@ class ProductPage extends Component {
     }
     starMaking() {
         let star = [];
-        for (let i = 0; i < this.state.rate; i++) {
-            star[i] = < i className="fa fa-star" />;
+        for (let i = 0; i < 4; i++) {
+            star[i] = < i className="fa fa-star fa-lg" />;
         }
         return star;
     }

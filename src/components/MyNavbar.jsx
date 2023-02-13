@@ -191,7 +191,7 @@ class MyNavbar extends Component {
                             </>
                         )}
                         <NavLink to="/cart">
-                            <i className="fa fa-shopping-cart fa-lg me-4 text-white mt-2" aria-hidden="true"></i>
+                            <i className="fa fa-shopping-cart fa-lg me-4 ms-2 text-white mt-2" aria-hidden="true"></i>
                         </NavLink>
                     </Container>
                 </Navbar>

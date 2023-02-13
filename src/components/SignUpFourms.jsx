@@ -67,6 +67,19 @@ class SignUpFourms extends Component {
                                                         />
                                                     </div>
                                                 </div>
+                                                <div className="d-flex flex-row align-items-center mb-4">
+                                                    <i className="fas fa-address-book fa-lg mx-3 mt-4 fa-fw" />
+                                                    <div className="form-outline flex-fill mb-0">
+                                                        <label className="form-label" htmlFor="form3Example4cd">
+                                                            آدرس خود را وارد کنید
+                                                        </label>
+                                                        <input
+                                                            type="password"
+                                                            id="form3Example4cd"
+                                                            className="form-control"
+                                                        />
+                                                    </div>
+                                                </div>
                                                 <div className="d-flex justify-content-center mx-4 mb-3 mt-5 mb-lg-4">
                                                     <button type="button" className="btn btn-primary btn-lg">
                                                         ثبت نام
