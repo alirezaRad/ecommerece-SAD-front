@@ -12,6 +12,9 @@ import NewVariantMaking from "./components/NewVariantMaking";
 import ProuductEditing from "./components/ProuductEditing"
 import VariantEditing from "./components/VariantEditing"
 import CategoryEditing from "./components/CategoryEditing";
+import ProductCardsAll from "./components/ProductCardsAll";
+import ProductPage from "./components/ProductPage";
+import Cart from "./components/Cart";
 
 
 class App extends Component {
@@ -52,10 +55,13 @@ class App extends Component {
                 <Route path="/dashbord/CategoryEditing" element={<CategoryEditing />} />
                 <Route path="/dashbord/newCatogoryMaking" element={<NewCatogoryMaking />} />
                 <Route path="/dashbord/newProuductMaking" element={<NewProuductMaking />} />
-                <Route path="/dashbord/" element={<AdminDashbourd />} />
+                <Route path="/dashbord/:id" element={<AdminDashbourd />} />
                 <Route path="/login" element={<SignInFourm />} />
                 <Route path="/register" element={<SignUpFourms />} />
-                <Route path="/" element={<AdminDashbourd />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/Product/:id" element={<ProductPage />} />
+                <Route path="/AllProduct" element={<ProductCardsAll />} />
+                <Route path="/" element={<HomePage />} />
             </Routes>
             <Footer></Footer>
         </div>);

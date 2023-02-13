@@ -9,12 +9,11 @@ import CategoryTable from "./CategoryTable";
 import axios from "axios"
 class AdminDashbourd extends Component {
     state = {
-    
+
     }
 
-    async componentDidMount()
-    {   
-        
+    async componentDidMount() {
+
         console.log(this.state.id)
         console.log(window.location.href.split('/')[4])
         // const response = await axios.get("192.168.100.91:5031/api/Country")
@@ -25,10 +24,10 @@ class AdminDashbourd extends Component {
         return (
             <>
                 <section dir="rtl" className="vh-800 m-5 pt-5" style={{ backgroundColor: "#FFFFFF" }}>
-                <CategoryTable ></CategoryTable>
+                    <CategoryTable ></CategoryTable>
                 </section>
-                    <ProductTable>
-                    </ProductTable></>
+                <ProductTable>
+                </ProductTable></>
 
         );
     }

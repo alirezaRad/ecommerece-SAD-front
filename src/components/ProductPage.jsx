@@ -22,27 +22,12 @@ class ProductPage extends Component {
                         />
                     </div>
                     <div className="col-12 col-md-6 justify-content-center text-center">
-                        <h1 className="">Product Name</h1>
-                        <p className="text-primary">Product_Category</p>
-                        <p className="">Product Description</p>
-                        <h3 className="">$99.99</h3>
-                        <div>
-                            <Button
-                                variant="secondary"
-                                onClick={() => handleOptionChange('Option 1')}
-                                active={selectedOption === 'Option 1'}
-                            >
-                                Option 1
-                            </Button>
-                            <Button
-                                variant="secondary"
-                                onClick={() => handleOptionChange('Option 2')}
-                                active={selectedOption === 'Option 2'}
-                            >
-                                Option 2
-                            </Button>
-                        </div>
-                        <button className="btn btn-primary">Add to Cart</button>
+                        <h1 className="">لپتاپ اچ پی پاویلیون</h1>
+                        <p className="text-primary tet-decoration">لپتاپ</p>
+                        <p className="">لپتاپ با کیفیت و با دوام </p>
+                        <h3 className="">1500000 تومان</h3>
+                        {this.starMaking()}
+                        <button className="btn btn-primary">اضافه کردن به سبد خرید</button>
                     </div>
                 </div>
             </div>

@@ -51,20 +51,20 @@ class NewProuductMaking extends Component {
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div className=" justify-content-center m-3 me-2">
+                                                <img src="https://www.slntechnologies.com/wp-content/uploads/2017/08/ef3-placeholder-image.jpg"
+                                                    className="rounded me-5" alt="example placeholder" style={{ width: '400px' }} />
+                                            </div>
                                             <div className="d-flex flex-row align-items-center mb-4">
                                                 <div className="form-outline flex-fill mb-0 ">
-                                                    <div class="d-flex justify-content-center m-3">
-                                                        <img src="https://www.slntechnologies.com/wp-content/uploads/2017/08/ef3-placeholder-image.jpg"
-                                                            className="rounded " alt="example placeholder" style={{ width: '400px' }} />
-                                                    </div>
                                                     <i className="fa fa-image fa-lg mx-3 mt-4 fa-fw" />
                                                     <label className="form-label" htmlFor="form3Example4c">
                                                         تصویر محصول را اضافه کنید                                                    </label>
-                                                    <div className="me-2">
+                                                    <div className="me-2 ">
                                                         <input
                                                             type="file"
                                                             id="form3Example4c"
-                                                            className="form-control me-5  "
+                                                            className="form-control me-5 "
                                                         />
                                                     </div>
                                                 </div>
@@ -76,7 +76,6 @@ class NewProuductMaking extends Component {
                                                         توضیحات محصول را اضافه کنید
                                                     </label>
                                                     <div className="me-2">
-
                                                         <textarea
                                                             type="text"
                                                             id="form3Example4c"
@@ -221,7 +220,7 @@ class NewProuductMaking extends Component {
                                     <div className=" d-none d-lg-block col-md-8 col-lg-4 col-xl-4 d-flex  order-1 order-lg-2 pt-5 mt-5 m-5">
                                         <img
                                             src="https://blush.design/api/download?shareUri=cnHzSK1782i4hJ5y&c=Hair_0%7Ef26037_Outfit_0%7E2b121a_Skin_0%7Ef8bc9a&w=800&h=800&fm=png"
-                                            className="img-fluid flipVertical"
+                                            className="img-fluid flipVertical me-5"
                                             alt="Sample image"
                                         />
                                     </div>
@@ -234,7 +233,7 @@ class NewProuductMaking extends Component {
             {
                 this.state.redirect && <Navigate state={{ id: 3 }} to='/dashbord' replace={true} />
             }
-        </section>
+        </section >
 
         </>);
     }

@@ -1,5 +1,6 @@
 import { Component } from "react";
 import ProductCard from "./ProductCard";
+import { Link } from "react-router-dom";
 class ProductCards extends Component {
     state = {
         product: [
@@ -44,6 +45,13 @@ class ProductCards extends Component {
                         ))
                         }
                     </div>
+                </div>
+                <div className="d-flex justify-content-center">
+                    <Link to="AllProduct">
+                        <button className="btn btn-primary  btn-lg m-5 mt-0">
+                            بیشتر
+                        </button>
+                    </Link>
                 </div>
             </section >
         );

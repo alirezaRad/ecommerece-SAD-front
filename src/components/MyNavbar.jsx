@@ -17,7 +17,7 @@ class MyNavbar extends Component {
             <>
                 <Navbar variant="dark" bg="dark" className="text-white py-3  fixed-top shadow-sm  " expand="xxxl" dir='rtl'>
                     <Container fluid>
-                        <Navbar.Brand className="d-lg-none" href="#">فروشگاه</Navbar.Brand>
+                        {/* <Navbar.Brand className="d-lg-none" href="#">فروشگاه</Navbar.Brand> */}
                         <Navbar.Toggle />
                         <Navbar.Offcanvas
                             placement="end"
@@ -186,10 +186,13 @@ class MyNavbar extends Component {
                             <>
                                 {this.props.user == 'admin' ? (
                                     <NavLink to="/." className="text-end text-white text-decoration-none my-2 mx-2 d-none d-lg-flex">داشبورد</NavLink>
-                                ) : (<></>)}
+                                ) : (<>
+                                </>)}
                             </>
                         )}
-
+                        <NavLink to="/cart">
+                            <i className="fa fa-shopping-cart fa-lg me-4 text-white mt-2" aria-hidden="true"></i>
+                        </NavLink>
                     </Container>
                 </Navbar>
             </>

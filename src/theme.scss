@@ -49,6 +49,7 @@ img.flipVertical {
     max-width: 800px;
 }
 
+
 ::-webkit-scrollbar{
     width : 5px
 }
@@ -65,3 +66,8 @@ div {
        another declaration */
     white-space: nowrap; 
 }
+
+  .input-field-min-max-width {
+    min-width: 250px;
+    max-width: 500px;
+  }

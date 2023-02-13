@@ -15,9 +15,9 @@ class CategoryCartAdmin extends Component {
                         {this.state.categoryName}
                     </h6>
                 </div>
-                    <Link to="/dashbord/CategoryEditing" className="d-flex  col-2  my-auto justify-content-center   h4  ">
-                        <FontAwesomeIcon icon={faPenToSquare}></FontAwesomeIcon>
-                    </Link>
+                <Link to="/dashbord/CategoryEditing" className="d-flex  col-2  my-auto justify-content-center   h4  ">
+                    <FontAwesomeIcon icon={faPenToSquare}></FontAwesomeIcon>
+                </Link>
             </div>
         );
     }
