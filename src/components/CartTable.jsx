@@ -33,13 +33,13 @@ class ProductCartAdmin extends Component {
                     <small className=" col-md-3 d-none d-md-flex justify-content-center my-auto" >
                         تومان  {this.state.price}
                     </small>
-                    <Link to="/dashbord/VariantEditing" className="d-flex col-md-1 col-2 justify-content-center my-auto text-decoration-none  h4 my-auto">
-                        <i class="fas fa-minus    "></i>
+                    <Link to="" className="d-flex col-md-1 col-2 justify-content-center my-auto text-decoration-none  h4 my-auto">
+                        <i class="fas fa-minus    " aria-hidden="true"></i>
                     </Link>
                     <small className=" col-md-2 d-none d-md-flex justify-content-center my-auto" >
                         {this.state.number}
                     </small>
-                    <Link to="/dashbord/VariantEditing" className="d-flex col-md-1 col-1 justify-content-center my-auto text-decoration-none  h4 my-auto">
+                    <Link to="" className="d-flex col-md-1 col-1 justify-content-center my-auto text-decoration-none  h4 my-auto">
                         <i class="fa fa-plus" aria-hidden="true"></i>
                     </Link>
                 </div>

@@ -28,10 +28,10 @@ class NewVariantMaking extends Component {
             if (response != null)
                 this.setState({ products: response.data })
             else {
-                alert(" we cant send data")
+                // alert(" we cant send data")
             }
             this.state.redirect = true;
-            alert("عالی")
+            // alert("عالی")
             this.forceUpdate();
 
         }
@@ -49,7 +49,7 @@ class NewVariantMaking extends Component {
         } catch (error) {
             console.log(error)
             console.log('this is error');
-            alert(error);
+            // alert(error);
         }
         if (response2 != null)
             this.setState({ variants: response2.data.data })

@@ -18,14 +18,13 @@ class CategoryTable extends Component {
         let response = null
         try {
             response = await axios.get("http://192.168.97.91:8004/api/ProductCategory/20017")
-            alert("Connect OK");
+            // alert("Connect OK");
         } catch (error) {
             console.log(error)
             console.log('this is error');
         }
-        if (response.data != null) {
+        if (response != null) {
             this.setState({ category: [response.data] })
-            console.log(this.state.category)
         }
         else {
             this.setState({
@@ -132,8 +131,7 @@ class CategoryTable extends Component {
                                 ]
                             }
                         ]
-                    }
-                ]
+                    }]
             })
             // alert(" Connect not ok");
         }

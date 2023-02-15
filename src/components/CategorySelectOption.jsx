@@ -26,7 +26,7 @@ class CategorySelectOption extends Component {
                     <CategorySelectOption parentTitle={`${title} _ `} config={menuItem.childs} childs={true} />
                 );
         } else {
-            return <option value="">{title}</option>
+            return <option value={menuItem.id}>{title}</option>
         }
     };
 

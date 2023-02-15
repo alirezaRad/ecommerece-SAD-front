@@ -25,7 +25,7 @@ class NewCatogoryMaking extends Component {
             if (response != null)
                 this.setState({ products: response.data.data })
             else {
-                alert(" we cant send data")
+                // alert(" we cant send data")
             }
             this.state.redirect = true;
             this.forceUpdate();

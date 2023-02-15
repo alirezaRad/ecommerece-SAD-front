@@ -18,22 +18,33 @@ class NewProuductMaking extends Component {
         description: null,
         categoryId: null
     }
+    convertStringToBinary = (str) => str.split("").map(l => l.charCodeAt(0).toString(2)).join(" ");
     create = async () => {
         if (this.state.name != null && this.state.image != null && this.state.description != null && this.state.categoryId != null) {
             this.state.product.name = this.state.name
             this.state.product.categoryId = this.state.categoryId
             this.state.product.description = this.state.description
-            this.state.product.image = this.state.image
-            const response = null
+            this.state.product.image = this.convertStringToBinary(this.state.image)
+            let response = null
+            let temSample = {
+                name: this.state.product.name,
+                categoryId: this.state.product.categoryId,
+                description: this.state.product.description
+            }
             try {
-                response = axios.post("", this.state.product)
+                alert(this.state.product)
+                console.log(this.state.product)
+                response = axios.post("http://192.168.97.91:8004/api/Product/Create", temSample)
+                alert("send")
+                alert(response)
             } catch (error) {
                 console.log(error)
+                alert(error)
             }
             if (response != null)
                 this.setState({ products: response.data.data })
             else {
-                alert(" we cant send data")
+                // alert(" we cant send data")
             }
             this.state.redirect = true;
             this.forceUpdate();
@@ -47,7 +58,7 @@ class NewProuductMaking extends Component {
         let response = null
         try {
             response = await axios.get("http://192.168.97.91:8004/api/ProductCategory/20017")
-            alert("Connect OK");
+            // alert("Connect OK");
         } catch (error) {
             console.log(error)
             console.log('this is error');

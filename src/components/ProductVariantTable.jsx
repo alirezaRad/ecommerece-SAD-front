@@ -16,14 +16,15 @@ class ProductTable extends Component {
     }
     async componentDidMount() {
         let response2 = null
-
+        let temid = window.location.href.split('/')[5];
+        this.setState({ id: temid })
         try {
-            response2 = await axios.get("http://192.168.97.91:8004/api/ProductItem/siblings?productId=10002")
-            alert("Connect OK AGain");
+            response2 = await axios.get(`http://192.168.97.91:8004/api/ProductItem/siblings?productId=${this.state.id}`)
+            // alert("Connect OK AGain");
         } catch (error) {
             console.log(error)
             console.log('this is error');
-            alert(error);
+            // alert(error);
         }
         if (response2 != null)
             this.setState({ productItems: response2.data })
