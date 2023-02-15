@@ -11,21 +11,23 @@ import ProductCartAdmin from "./ProductCartAdmin";
 import axios from "axios"
 class ProductTable extends Component {
     state = {
-        products: []
+        products: [],
+        category: []
     }
     async componentDidMount() {
-        const response = null
+        let response = null
         try {
-            response = await axios.get("192.168.100.91:5031/api/Prou")
+            response = await axios.get("http://192.168.97.91:8004/api/Product/ProductsByCategory?id=20017")
+            alert("product loaded")
         } catch (error) {
             console.log(error)
+            alert(error)
         }
         if (response != null)
-            this.setState({ products: response.data.data })
+            this.setState({ products: response.data })
         else {
             this.setState({
                 products: [
-
                     {
                         "id": 30003,
                         "categoryId": 20021,
@@ -64,10 +66,132 @@ class ProductTable extends Component {
                     }
                 ]
             })
-            alert(" we cant connect Loading from Mock")
         }
         console.log(this.state.products)
         console.log("OK")
+        let response2 = null
+        try {
+            response2 = await axios.get("http://192.168.97.91:8004/api/ProductCategory/20017")
+            alert("Connect OK");
+        } catch (error) {
+            console.log(error)
+            console.log('this is error');
+        }
+        if (response2 != null)
+            this.setState({ category: [response2.data] })
+        else {
+            this.setState({
+                category: [
+                    {
+                        "id": 20017,
+                        "title": "root",
+                        "isDeleted": false,
+                        "creationDate": "12/20/2022 10:44:28",
+                        "childs": [
+                            {
+                                "id": 20019,
+                                "title": "الکتیریکی",
+                                "isDeleted": true,
+                                "creationDate": "12/20/2022 10:55:12",
+                                "childs": [
+                                    {
+                                        "id": 20020,
+                                        "title": "لپتاپ",
+                                        "isDeleted": true,
+                                        "creationDate": "12/20/2022 10:57:24",
+                                        "childs": [
+                                            {
+                                                "id": 20031,
+                                                "title": "ایسوس",
+                                                "isDeleted": false,
+                                                "creationDate": "12/25/2022 02:59:37",
+                                                "childs": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": 20030,
+                                        "title": "موس",
+                                        "isDeleted": false,
+                                        "creationDate": "12/25/2022 02:50:22",
+                                        "childs": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 20021,
+                                "title": "دیجیتال",
+                                "isDeleted": false,
+                                "creationDate": "12/22/2022 11:54:46",
+                                "childs": [
+                                    {
+                                        "id": 20022,
+                                        "title": "تبلت",
+                                        "isDeleted": false,
+                                        "creationDate": "12/22/2022 11:55:07",
+                                        "childs": []
+                                    },
+                                    {
+                                        "id": 20023,
+                                        "title": "دوربین",
+                                        "isDeleted": true,
+                                        "creationDate": "12/22/2022 11:55:07",
+                                        "childs": []
+                                    },
+                                    {
+                                        "id": 20024,
+                                        "title": "گوشس",
+                                        "isDeleted": false,
+                                        "creationDate": "12/22/2022 11:56:01",
+                                        "childs": []
+                                    },
+                                    {
+                                        "id": 20025,
+                                        "title": "خیار",
+                                        "isDeleted": false,
+                                        "creationDate": "12/22/2022 11:56:08",
+                                        "childs": []
+                                    },
+                                    {
+                                        "id": 20026,
+                                        "title": "ساعت",
+                                        "isDeleted": false,
+                                        "creationDate": "12/22/2022 11:56:23",
+                                        "childs": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 20027,
+                                "title": "لباس",
+                                "isDeleted": false,
+                                "creationDate": "12/22/2022 11:56:40",
+                                "childs": [
+                                    {
+                                        "id": 20028,
+                                        "title": "تی شرت",
+                                        "isDeleted": false,
+                                        "creationDate": "12/22/2022 11:56:57",
+                                        "childs": []
+                                    },
+                                    {
+                                        "id": 20029,
+                                        "title": "شلوار",
+                                        "isDeleted": false,
+                                        "creationDate": "12/22/2022 11:57:07",
+                                        "childs": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            })
+            // alert(" Connect not ok");
+        }
+        console.log(this.state.category)
+        console.log("OK")
+        this.forceUpdate();
     }
     render() {
         return (
@@ -88,111 +212,7 @@ class ProductTable extends Component {
                                 </Link>
                             </Form>
                             <Dropdown className="text-end d-none d-md-block " >
-                                <MyDropDownAdmin config={[
-                                    {
-                                        "id": 20017,
-                                        "title": "root",
-                                        "isDeleted": false,
-                                        "creationDate": "12/20/2022 10:44:28",
-                                        "childs": [
-                                            {
-                                                "id": 20019,
-                                                "title": "Grade2",
-                                                "isDeleted": true,
-                                                "creationDate": "12/20/2022 10:55:12",
-                                                "childs": [
-                                                    {
-                                                        "id": 20020,
-                                                        "title": "Grade2",
-                                                        "isDeleted": true,
-                                                        "creationDate": "12/20/2022 10:57:24",
-                                                        "childs": [
-                                                            {
-                                                                "id": 20031,
-                                                                "title": "fucxdfghkreact",
-                                                                "isDeleted": false,
-                                                                "creationDate": "12/25/2022 02:59:37",
-                                                                "childs": []
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "id": 20030,
-                                                        "title": "fuckdfghjkjhgfdui",
-                                                        "isDeleted": false,
-                                                        "creationDate": "12/25/2022 02:50:22",
-                                                        "childs": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "id": 20021,
-                                                "title": "Dijital",
-                                                "isDeleted": false,
-                                                "creationDate": "12/22/2022 11:54:46",
-                                                "childs": [
-                                                    {
-                                                        "id": 20022,
-                                                        "title": "tablet",
-                                                        "isDeleted": false,
-                                                        "creationDate": "12/22/2022 11:55:07",
-                                                        "childs": []
-                                                    },
-                                                    {
-                                                        "id": 20023,
-                                                        "title": "tablet",
-                                                        "isDeleted": true,
-                                                        "creationDate": "12/22/2022 11:55:07",
-                                                        "childs": []
-                                                    },
-                                                    {
-                                                        "id": 20024,
-                                                        "title": "laptop",
-                                                        "isDeleted": false,
-                                                        "creationDate": "12/22/2022 11:56:01",
-                                                        "childs": []
-                                                    },
-                                                    {
-                                                        "id": 20025,
-                                                        "title": "دوربین",
-                                                        "isDeleted": false,
-                                                        "creationDate": "12/22/2022 11:56:08",
-                                                        "childs": []
-                                                    },
-                                                    {
-                                                        "id": 20026,
-                                                        "title": "ساعت",
-                                                        "isDeleted": false,
-                                                        "creationDate": "12/22/2022 11:56:23",
-                                                        "childs": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "id": 20027,
-                                                "title": "cloth",
-                                                "isDeleted": false,
-                                                "creationDate": "12/22/2022 11:56:40",
-                                                "childs": [
-                                                    {
-                                                        "id": 20028,
-                                                        "title": "T-shirt",
-                                                        "isDeleted": false,
-                                                        "creationDate": "12/22/2022 11:56:57",
-                                                        "childs": []
-                                                    },
-                                                    {
-                                                        "id": 20029,
-                                                        "title": "suit",
-                                                        "isDeleted": false,
-                                                        "creationDate": "12/22/2022 11:57:07",
-                                                        "childs": []
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]}
+                                <MyDropDownAdmin config={this.state.category}
                                 ></MyDropDownAdmin></Dropdown>
 
                         </div>
@@ -211,7 +231,7 @@ class ProductTable extends Component {
                         <div className="row col-12 overflow-auto rounded-bottom m-0  bg-white px-2 py-4" style={{ maxHeight: "500px" }}>
                             {this.state.products.map((index) => {
                                 return (
-                                    <ProductCartAdmin image = {index.image} count= {index.totalQuantity} sellCount="0" productName={index.name} price={index.minimumPrice}></ProductCartAdmin>)
+                                    <ProductCartAdmin id={index.id} image={index.image} count={index.totalQuantity} sellCount="0" productName={index.name} price={index.minimumPrice}></ProductCartAdmin>)
                             })}
                             {/* <h5 className="text-center my-5"> هیچ محصولی موجود نیست</h5> */}
                         </div>

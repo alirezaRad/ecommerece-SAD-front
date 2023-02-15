@@ -18,19 +18,19 @@ class CategoryNameCreator extends Component {
 
     getMenuItem = (menuItem, depthLevel, index, parentTitle) => {
         let title = menuItem.title
-        if(parentTitle)
-         title = parentTitle + menuItem.title;
+        if (parentTitle)
+            title = parentTitle + menuItem.title;
         if (menuItem.childs && menuItem.childs.length > 0) {
             if (title == "root")
                 return (
-                    <CategoryNameCreator  config={menuItem.childs} childs={true} />
+                    <CategoryNameCreator config={menuItem.childs} childs={true} />
                 );
             else
                 return (
                     <CategoryNameCreator parentTitle={`${title} _ `} config={menuItem.childs} childs={true} />
                 );
         } else {
-            return <CategoryCartAdmin >{title}</CategoryCartAdmin>
+            return <CategoryCartAdmin categoryId={menuItem.id}>{title}</CategoryCartAdmin>
         }
     };
 

@@ -9,16 +9,10 @@ import CategoryTable from "./CategoryTable";
 import axios from "axios"
 class AdminDashbourd extends Component {
     state = {
-
+        id: 0
     }
-
     async componentDidMount() {
-
-        console.log(this.state.id)
-        console.log(window.location.href.split('/')[4])
-        // const response = await axios.get("192.168.100.91:5031/api/Country")
-        // console.log(response)
-        // this.setState({products : response.data.data})
+        this.state.id = window.location.href.split('/')[4]
     }
     render() {
         return (

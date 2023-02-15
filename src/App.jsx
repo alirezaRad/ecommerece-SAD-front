@@ -22,37 +22,11 @@ class App extends Component {
     render() {
         return (<div>
             <MyNavbar user=""></MyNavbar>
-
             <Routes>
-
-                <Route path="/dashbord/newVariantMaking" element={<NewVariantMaking variants={[{
-                    "name": "رنگ",
-                    "value": ["آبی", "قرمز"]
-                }, {
-                    "name": "میزان حافظه SSD",
-                    "value": ["256 گیگS SD", "512 گیگ SSD"]
-                }, {
-                    "name": "رم",
-                    "value": ["16 گیگ", "8 گیگ"]
-                }, {
-                    "name": "هارد",
-                    "value": ["گیگابایت 512", "ترابایت 1"]
-                }]} ></NewVariantMaking>} />
-                <Route path="/dashbord/VariantEditing" element={<VariantEditing variants={[{
-                    "name": "رنگ",
-                    "value": ["آبی", "قرمز"]
-                }, {
-                    "name": "میزان حافظه SSD",
-                    "value": ["256 گیگS SD", "512 گیگ SSD"]
-                }, {
-                    "name": "رم",
-                    "value": ["16 گیگ", "8 گیگ"]
-                }, {
-                    "name": "هارد",
-                    "value": ["گیگابایت 512", "ترابایت 1"]
-                }]} />} />
-                <Route path="/dashbord/ProuductEditing" element={<ProuductEditing />} />
-                <Route path="/dashbord/CategoryEditing" element={<CategoryEditing />} />
+                <Route path="/dashbord/newVariantMaking/:id" element={<NewVariantMaking ></NewVariantMaking>} />
+                <Route path="/dashbord/VariantEditing/:id/:id" element={<VariantEditing />} />
+                <Route path="/dashbord/ProuductEditing/:id" element={<ProuductEditing />} />
+                <Route path="/dashbord/CategoryEditing/:id" element={<CategoryEditing />} />
                 <Route path="/dashbord/newCatogoryMaking" element={<NewCatogoryMaking />} />
                 <Route path="/dashbord/newProuductMaking" element={<NewProuductMaking />} />
                 <Route path="/dashbord/:id" element={<AdminDashbourd />} />

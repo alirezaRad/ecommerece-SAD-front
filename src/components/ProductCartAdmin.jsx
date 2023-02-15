@@ -5,12 +5,13 @@ import { faSquarePlus } from '@fortawesome/free-solid-svg-icons'
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 class ProductCartAdmin extends Component {
     state = {
+        id: this.props.id,
         productName: this.props.productName,
         count: this.props.count,
         sellCount: this.props.sellCount,
         price: this.props.price,
         offPrice: this.props.offPrice,
-        image : this.props.image
+        image: this.props.image
 
     }
     render() {
@@ -35,10 +36,10 @@ class ProductCartAdmin extends Component {
                     <small className=" col-md-2 d-none d-md-flex justify-content-center my-auto " >
                         {this.state.count}
                     </small>
-                    <Link to="/dashbord/ProuductEditing" className="d-flex col-md-1 col-2 justify-content-center my-auto  h4 my-auto">
+                    <Link to={`/dashbord/ProuductEditing/${this.state.id}`} className="d-flex col-md-1 col-2 justify-content-center my-auto  h4 my-auto">
                         <FontAwesomeIcon icon={faPenToSquare}></FontAwesomeIcon>
                     </Link>
-                    <Link to="/dashbord/newVariantMaking" className="d-flex col-md-1 col-2  my-auto justify-content-center   h4  ">
+                    <Link to={`/dashbord/newVariantMaking/${this.state.id}`} className="d-flex col-md-1 col-2  my-auto justify-content-center   h4  ">
                         <FontAwesomeIcon icon={faSquarePlus}></FontAwesomeIcon>
                     </Link>
                 </div>

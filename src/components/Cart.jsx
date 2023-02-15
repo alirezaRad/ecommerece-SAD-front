@@ -16,7 +16,6 @@ class Cart extends Component {
                 <div className="container-fluid p-5 pt-0 my-3" >
                     <div className="shadow row  m-0 bg-dark rounded-3">
                         <div className=" col-12 bg-dark  text-white rounded-top text-end p-2 d-md-flex " >
-
                         </div>
                         <div className=" bg-dark p-0 row mx-auto" >
                             <div className="col-12 m-0 d-block justify-content-around row px-2">

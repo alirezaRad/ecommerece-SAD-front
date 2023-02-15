@@ -5,6 +5,7 @@ import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 class CategoryCartAdmin extends Component {
     state = {
         categoryName: this.props.children,
+        categoryId: this.props.categoryId
 
     }
     render() {
@@ -15,7 +16,7 @@ class CategoryCartAdmin extends Component {
                         {this.state.categoryName}
                     </h6>
                 </div>
-                <Link to="/dashbord/CategoryEditing" className="d-flex  col-2  my-auto justify-content-center   h4  ">
+                <Link to={`/dashbord/CategoryEditing/${this.state.categoryId}`} className="d-flex  col-2  my-auto justify-content-center   h4  ">
                     <FontAwesomeIcon icon={faPenToSquare}></FontAwesomeIcon>
                 </Link>
             </div>

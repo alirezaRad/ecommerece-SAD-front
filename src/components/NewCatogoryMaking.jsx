@@ -1,23 +1,172 @@
 import { faTurkishLiraSign } from "@fortawesome/free-solid-svg-icons";
 import { Component } from "react";
 import { Nav } from "react-bootstrap";
+import axios from "axios";
 import { Navigate } from "react-router-dom";
 import CategorySelectOptionExteme from "./CategorySelectOptionExteme"
 class NewCatogoryMaking extends Component {
     state = {
-        variation: ["شیبشل", "یلشی", "نمشستیبمنس"],
+        variation: [],
         number: 1,
-        newOne: "asdd",
-        redirect: false
+        newOne: null,
+        redirect: false,
+        category: [],
+        categoryId: null,
+        name: null
+    }
+    create = async () => {
+        if (this.state.name != null && this.state.categoryId != null) {
+            const response = null
+            try {
+                response = axios.post("", this.state.product)
+            } catch (error) {
+                console.log(error)
+            }
+            if (response != null)
+                this.setState({ products: response.data.data })
+            else {
+                alert(" we cant send data")
+            }
+            this.state.redirect = true;
+            this.forceUpdate();
+
+        }
+        else {
+            alert("فیلد های موجود را کامل کنید")
+        }
+    }
+    async componentDidMount() {
+        let response = null
+        try {
+            // response = await axios.get("http://192.168.97.91:8004/api/ProductCategory/20017")
+            // alert("Connect OK");
+        } catch (error) {
+            console.log(error)
+            console.log('this is error');
+        }
+        if (response != null)
+            this.setState({ category: response.data.data })
+        else {
+            this.setState({
+                category: [
+                    {
+                        "id": 20017,
+                        "title": "root",
+                        "isDeleted": false,
+                        "creationDate": "12/20/2022 10:44:28",
+                        "childs": [
+                            {
+                                "id": 20019,
+                                "title": "الکتیریکی",
+                                "isDeleted": true,
+                                "creationDate": "12/20/2022 10:55:12",
+                                "childs": [
+                                    {
+                                        "id": 20020,
+                                        "title": "لپتاپ",
+                                        "isDeleted": true,
+                                        "creationDate": "12/20/2022 10:57:24",
+                                        "childs": [
+                                            {
+                                                "id": 20031,
+                                                "title": "ایسوس",
+                                                "isDeleted": false,
+                                                "creationDate": "12/25/2022 02:59:37",
+                                                "childs": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": 20030,
+                                        "title": "موس",
+                                        "isDeleted": false,
+                                        "creationDate": "12/25/2022 02:50:22",
+                                        "childs": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 20021,
+                                "title": "دیجیتال",
+                                "isDeleted": false,
+                                "creationDate": "12/22/2022 11:54:46",
+                                "childs": [
+                                    {
+                                        "id": 20022,
+                                        "title": "تبلت",
+                                        "isDeleted": false,
+                                        "creationDate": "12/22/2022 11:55:07",
+                                        "childs": []
+                                    },
+                                    {
+                                        "id": 20023,
+                                        "title": "دوربین",
+                                        "isDeleted": true,
+                                        "creationDate": "12/22/2022 11:55:07",
+                                        "childs": []
+                                    },
+                                    {
+                                        "id": 20024,
+                                        "title": "گوشس",
+                                        "isDeleted": false,
+                                        "creationDate": "12/22/2022 11:56:01",
+                                        "childs": []
+                                    },
+                                    {
+                                        "id": 20025,
+                                        "title": "خیار",
+                                        "isDeleted": false,
+                                        "creationDate": "12/22/2022 11:56:08",
+                                        "childs": []
+                                    },
+                                    {
+                                        "id": 20026,
+                                        "title": "ساعت",
+                                        "isDeleted": false,
+                                        "creationDate": "12/22/2022 11:56:23",
+                                        "childs": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 20027,
+                                "title": "لباس",
+                                "isDeleted": false,
+                                "creationDate": "12/22/2022 11:56:40",
+                                "childs": [
+                                    {
+                                        "id": 20028,
+                                        "title": "تی شرت",
+                                        "isDeleted": false,
+                                        "creationDate": "12/22/2022 11:56:57",
+                                        "childs": []
+                                    },
+                                    {
+                                        "id": 20029,
+                                        "title": "شلوار",
+                                        "isDeleted": false,
+                                        "creationDate": "12/22/2022 11:57:07",
+                                        "childs": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            })
+            // alert(" Connect not ok");
+        }
+        console.log(this.state.category)
+        console.log("OK")
     }
     addVariation = () => {
-        this.state.variation.push(this.state.newOne);
-        this.state.number = 1;
-        this.forceUpdate();
-    }
-    create = () => {
-        this.state.redirect = true;
-        this.forceUpdate();
+        if (this.state.newOne != null) {
+            this.state.variation.push(this.state.newOne);
+            this.state.number = 1;
+            this.forceUpdate();
+        }
+        else
+            alert("لطفا فیلد موجود را کامل کنید")
     }
     deletVariation(index) {
         console.log(index)
@@ -51,6 +200,7 @@ class NewCatogoryMaking extends Component {
                                                         type="text"
                                                         id="form3Example3c"
                                                         className="form-control me-3"
+                                                        onChange={(event) => { this.state.name = event.target.value }}
                                                     />
                                                 </div>
                                             </div>
@@ -64,115 +214,11 @@ class NewCatogoryMaking extends Component {
                                                         <select
                                                             className="selectpicker border-borderColor rounded p-2 mt-4"
                                                             data-live-search="true me-5"
+                                                            onChange={(event) => { this.state.categoryId = event.target.value }}
                                                         >
-                                                            <CategorySelectOptionExteme parentTitle="" config={[
-                                                                {
-                                                                    "id": 20017,
-                                                                    "title": "root",
-                                                                    "isDeleted": false,
-                                                                    "creationDate": "12/20/2022 10:44:28",
-                                                                    "childs": [
-                                                                        {
-                                                                            "id": 20019,
-                                                                            "title": "الکتیریکی",
-                                                                            "isDeleted": true,
-                                                                            "creationDate": "12/20/2022 10:55:12",
-                                                                            "childs": [
-                                                                                {
-                                                                                    "id": 20020,
-                                                                                    "title": "لپتاپ",
-                                                                                    "isDeleted": true,
-                                                                                    "creationDate": "12/20/2022 10:57:24",
-                                                                                    "childs": [
-                                                                                        {
-                                                                                            "id": 20031,
-                                                                                            "title": "ایسوس",
-                                                                                            "isDeleted": false,
-                                                                                            "creationDate": "12/25/2022 02:59:37",
-                                                                                            "childs": []
-                                                                                        }
-                                                                                    ]
-                                                                                },
-                                                                                {
-                                                                                    "id": 20030,
-                                                                                    "title": "موس",
-                                                                                    "isDeleted": false,
-                                                                                    "creationDate": "12/25/2022 02:50:22",
-                                                                                    "childs": []
-                                                                                }
-                                                                            ]
-                                                                        },
-                                                                        {
-                                                                            "id": 20021,
-                                                                            "title": "دیجیتال",
-                                                                            "isDeleted": false,
-                                                                            "creationDate": "12/22/2022 11:54:46",
-                                                                            "childs": [
-                                                                                {
-                                                                                    "id": 20022,
-                                                                                    "title": "تبلت",
-                                                                                    "isDeleted": false,
-                                                                                    "creationDate": "12/22/2022 11:55:07",
-                                                                                    "childs": []
-                                                                                },
-                                                                                {
-                                                                                    "id": 20023,
-                                                                                    "title": "دوربین",
-                                                                                    "isDeleted": true,
-                                                                                    "creationDate": "12/22/2022 11:55:07",
-                                                                                    "childs": []
-                                                                                },
-                                                                                {
-                                                                                    "id": 20024,
-                                                                                    "title": "گوشس",
-                                                                                    "isDeleted": false,
-                                                                                    "creationDate": "12/22/2022 11:56:01",
-                                                                                    "childs": []
-                                                                                },
-                                                                                {
-                                                                                    "id": 20025,
-                                                                                    "title": "خیار",
-                                                                                    "isDeleted": false,
-                                                                                    "creationDate": "12/22/2022 11:56:08",
-                                                                                    "childs": []
-                                                                                },
-                                                                                {
-                                                                                    "id": 20026,
-                                                                                    "title": "ساعت",
-                                                                                    "isDeleted": false,
-                                                                                    "creationDate": "12/22/2022 11:56:23",
-                                                                                    "childs": []
-                                                                                }
-                                                                            ]
-                                                                        },
-                                                                        {
-                                                                            "id": 20027,
-                                                                            "title": "لباس",
-                                                                            "isDeleted": false,
-                                                                            "creationDate": "12/22/2022 11:56:40",
-                                                                            "childs": [
-                                                                                {
-                                                                                    "id": 20028,
-                                                                                    "title": "تی شرت",
-                                                                                    "isDeleted": false,
-                                                                                    "creationDate": "12/22/2022 11:56:57",
-                                                                                    "childs": []
-                                                                                },
-                                                                                {
-                                                                                    "id": 20029,
-                                                                                    "title": "شلوار",
-                                                                                    "isDeleted": false,
-                                                                                    "creationDate": "12/22/2022 11:57:07",
-                                                                                    "childs": []
-                                                                                }
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]}>
+                                                            <CategorySelectOptionExteme parentTitle="" config={this.state.category}>
                                                             </CategorySelectOptionExteme>
                                                         </select>
-
                                                     </div>
                                                 </div>
                                             </div>
@@ -233,7 +279,6 @@ class NewCatogoryMaking extends Component {
                 this.state.redirect && <Navigate to={-1} replace={true} />
             }
         </section >
-
         </>);
     }
 

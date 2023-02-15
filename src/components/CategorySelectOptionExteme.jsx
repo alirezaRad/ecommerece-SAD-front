@@ -13,25 +13,28 @@ class CategorySelectOptionExteme extends Component {
             if (title == "root")
                 return (
                     <>
-                        <option value="">محصولات</option>
+                        <option value="20017">محصولات</option>
                         <CategorySelectOptionExteme parentTitle="" config={menuItem.childs} childs={true} />
                     </>
                 );
             else
                 return (
                     <>
-                        <option value="">{title}</option>
+                        <option value={menuItem.id}>{title}</option>
                         <CategorySelectOptionExteme parentTitle={`${title} _ `} config={menuItem.childs} childs={true} />
                     </>
                 );
         } else {
-            return <option value="">{title}</option>
+            return <option value={menuItem.id} >{title}</option>
         }
     };
 
     render = () => {
         let parentTitle = this.props.parentTitle
         let config = this.props.config
+        let id = this.props.config.id
+        console.log(id)
+        console.log(parentTitle)
         let childs = [];
         config.map((item, index) => {
             childs.push(this.getMenuItem(item, 0, index, parentTitle));

@@ -8,8 +8,85 @@ import Button from 'react-bootstrap/Button';
 import { DropdownSubmenu, NavDropdownMenu } from "react-bootstrap-submenu";
 import { Link } from "react-router-dom";
 import VarientCartAdmin from "./VarientCartAdmin";
+import axios from "axios";
 class ProductTable extends Component {
-    state = {}
+    state = {
+        productItems: [],
+        id: this.props.id,
+    }
+    async componentDidMount() {
+        let response2 = null
+
+        try {
+            response2 = await axios.get("http://192.168.97.91:8004/api/ProductItem/siblings?productId=10002")
+            alert("Connect OK AGain");
+        } catch (error) {
+            console.log(error)
+            console.log('this is error');
+            alert(error);
+        }
+        if (response2 != null)
+            this.setState({ productItems: response2.data })
+        else {
+            this.setState({
+                productItems: [
+                    {
+                        'count': '100',
+                        "name": "لپتاپ لنوو",
+                        "sellCount": "140",
+                        "price": "1500000",
+                        "variantId": "2",
+                        configurations: [
+                            {
+                                'name': '1',
+                                'value': "آبی"
+                            },
+                            {
+                                'name': '2',
+                                'value': "هارد512"
+                            },
+                            {
+                                'name': '2',
+                                'value': "8 گیگ رم"
+                            },
+                            {
+                                'name': '2',
+                                'value': "256 اس اس دی"
+                            }
+                        ]
+                    },
+                    {
+                        "variantId": "3",
+                        'count': '100',
+                        "name": "لپتاپ لنوو",
+                        "sellCount": "140",
+                        "price": "1500000",
+                        configurations: [
+                            {
+                                'name': '1',
+                                'value': "قرمز"
+                            },
+                            {
+                                'name': '2',
+                                'value': "هارد512"
+                            },
+                            {
+                                'name': '2',
+                                'value': "8 گیگ رم"
+                            },
+                            {
+                                'name': '2',
+                                'value': "256 اس اس دی"
+                            }
+                        ]
+                    }
+                ]
+            })
+            // alert(" Connect not ok");
+        }
+        console.log(this.state.category)
+        console.log("OK")
+    }
     render() {
         return (
             <section dir="ltr" style={{ backgroundColor: "white" }} ClassName="" >
@@ -30,24 +107,11 @@ class ProductTable extends Component {
                             </div>
                         </div>
                         <div className="row col-12 overflow-auto rounded-bottom m-0  bg-white px-2 py-4" style={{ maxHeight: "500px" }}>
-                            <VarientCartAdmin count="130" sellCount="1500" productName="لپتاپ لنوو" price="120000000" variant={[
-                                {
-                                    'name': '1',
-                                    'value': "آبی"
-                                },
-                                {
-                                    'name': '2',
-                                    'value': "هارد512"
-                                },
-                                {
-                                    'name': '2',
-                                    'value': "8 گیگ رم"
-                                },
-                                {
-                                    'name': '2',
-                                    'value': "256 اس اس دی"
-                                }
-                            ]}></VarientCartAdmin>
+                            {this.state.productItems.map((index) => {
+                                return (
+                                    <VarientCartAdmin variantId={index.variantId} productitemId={this.state.id} count={index.count} sellCount={index.sellCount} productName={index.name} price={index.price} variant={index.configurations}></VarientCartAdmin>
+                                )
+                            })}
                             {/* <h5 className="text-center my-5"> هیچ محصولی موجود نیست</h5> */}
                         </div>
                     </div>
